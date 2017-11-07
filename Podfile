@@ -6,12 +6,22 @@ target 'RxStockDemo' do
   use_frameworks!
 
   # Pods for RxStockDemo
-  pod 'RxSwift'
-  pod 'RxCocoa'
+  pod 'RxSwift', '~> 4.0'
+  pod 'RxCocoa', '~> 4.0'
+  pod 'RxDataSources'
+  pod 'Realm'
+  pod 'RxRealm'
+  pod 'Alamofire'
+  pod 'RxAlamofire'
 
   target 'RxStockDemoTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'Nimble'
+    pod 'RxNimble'
+    pod 'RxBlocking'
+    pod 'OHHTTPStubs'
+    pod 'OHHTTPStubs/Swift'
   end
 
 end
