@@ -24,6 +24,8 @@ class ViewController: UIViewController {
                 print(error)
             })
             .disposed(by: bag)
+//        StocksApi.shared.intraDayQuery(symbol: "APPL", interval: .oneMin)
+        
     }
 }
 

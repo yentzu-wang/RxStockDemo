@@ -23,16 +23,37 @@ enum QueryInterval: String {
     case sixtyMins = "60min"
 }
 
+struct Stock: Codable {
+    let symbol: String?
+    let dateTime: String?
+    let open: String
+    let high: String
+    let low: String
+    let close: String
+    let volume: String
+}
 
 final class StocksApi {
     static let shared = StocksApi()
     private let url = "https://www.alphavantage.co/query"
+    private let bag = DisposeBag()
     
     private init() {}
     
-    func indraDayQuery(symbol: String, interval: QueryInterval) {
-        
-    }
+//    func intraDayQuery(symbol: String, interval: QueryInterval) {
+//        let params = ["function": "TIME_SERIES_INTRADAY",
+//                      "symbol": symbol,
+//                      "interval": interval.rawValue]
+//        
+//        let r = requestData(try! urlRequest(.get, url, parameters: params))
+//            .flatMap { arg -> Observable<Data> in
+//                print(arg.1)
+//                return Observable.of(arg.1)
+//            }
+//        .map
+//        
+//        
+//    }
     
     private func getRandomKey() -> String {
         let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: apiKeys.count)
