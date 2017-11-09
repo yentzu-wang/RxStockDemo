@@ -16,7 +16,7 @@ struct Symbol: Codable {
     let Symbol: String?
 }
 
-class SandPApi {
+final class SandPApi {
     static let shared = SandPApi()
     private let symbolUrl = "https://pkgstore.datahub.io/core/s-and-p-500-companies:constituents_json/data/constituents_json.json"
     
