@@ -11,9 +11,15 @@ import RxSwift
 import RxAlamofire
 
 struct Symbol: Codable {
-    let Name: String?
-    let Sector: String?
-    let Symbol: String?
+    let name: String?
+    let sector: String?
+    let symbol: String?
+    
+    private enum CodingKeys: String, CodingKey {
+        case name = "Name"
+        case sector = "Sector"
+        case symbol = "Symbol"
+    }
 }
 
 class SandPApi {
