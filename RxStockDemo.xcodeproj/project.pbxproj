@@ -13,7 +13,6 @@
 		01349BB61FB14DE2000FDD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB41FB14DE2000FDD5E /* Main.storyboard */; };
 		01349BB81FB14DE2000FDD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB71FB14DE2000FDD5E /* Assets.xcassets */; };
 		01349BBB1FB14DE2000FDD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */; };
-		01349BC61FB14DE2000FDD5E /* RxStockDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		32180E5C3E78F95415D6DF1C /* Pods_RxStockDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */; };
 		596ABFECAE8D52466394E560 /* Pods_RxStockDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE633173BED12E1D769A5740 /* Pods_RxStockDemoTests.framework */; };
@@ -40,7 +39,6 @@
 		01349BBA1FB14DE2000FDD5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		01349BBC1FB14DE2000FDD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01349BC11FB14DE2000FDD5E /* RxStockDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxStockDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStockDemoTests.swift; sourceTree = "<group>"; };
 		01349BC71FB14DE2000FDD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		01349BC41FB14DE2000FDD5E /* RxStockDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */,
 				01349BC71FB14DE2000FDD5E /* Info.plist */,
 				011F066A1FB421BD00F681B5 /* SAndPApi */,
 			);
@@ -422,7 +419,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01349BC61FB14DE2000FDD5E /* RxStockDemoTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

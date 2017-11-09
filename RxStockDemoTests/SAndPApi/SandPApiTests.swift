@@ -24,6 +24,8 @@ class SandPApiTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
+        
+        testObj = [Symbol]()
         testObj.append(foo1)
         stub(condition: isHost(url)) { _ in
             return OHHTTPStubsResponse(jsonObject: self.testObj, statusCode: 200, headers: nil)
@@ -39,9 +41,34 @@ class SandPApiTests: XCTestCase {
     }
     
     func testData() {
-//        let observable = data(.get, url)
-//            .toBlocking()
-//
-//    expect(observable).notTo(beNil())
+        let observable = data(.get, url)
+            .toBlocking()
+            .firstOrNil()
+        
+        expect(observable).notTo(beNil())
+    }
+    
+    func testError() {
+        var erroredCorrectly = false
+        let observable = data(.get, fakeUrl)
+        
+        do {
+            let _ = try observable.toBlocking().first()
+            assertionFailure()
+        } catch {
+             erroredCorrectly = true
+        }
+        
+        expect(erroredCorrectly) == true
+    }
+}
+
+extension BlockingObservable {
+    func firstOrNil() -> E? {
+        do {
+            return try first()
+        } catch {
+            return nil
+        }
     }
 }
