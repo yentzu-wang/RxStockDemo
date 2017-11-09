@@ -17,7 +17,7 @@ import OHHTTPStubs
 
 class SandPApiTests: XCTestCase {
     var testObj: [Symbol]!
-    let foo1 = Symbol(Name: "foo1", Sector: "foo1", Symbol: "foo1")
+    let foo1 = Symbol(name: "foo1", sector: "foo1", symbol: "foo1")
     
     let url = "https://pkgstore.datahub.io/core/s-and-p-500-companies:constituents_json/data/constituents_json.json"
     let fakeUrl = "http://fakeurl.com"
