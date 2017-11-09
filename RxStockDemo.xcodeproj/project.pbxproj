@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F06681FB421B100F681B5 /* SandPApiTests.swift */; };
 		01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB01FB14DE2000FDD5E /* AppDelegate.swift */; };
 		01349BB31FB14DE2000FDD5E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB21FB14DE2000FDD5E /* ViewController.swift */; };
 		01349BB61FB14DE2000FDD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB41FB14DE2000FDD5E /* Main.storyboard */; };
 		01349BB81FB14DE2000FDD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB71FB14DE2000FDD5E /* Assets.xcassets */; };
 		01349BBB1FB14DE2000FDD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */; };
 		01349BC61FB14DE2000FDD5E /* RxStockDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */; };
+		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		32180E5C3E78F95415D6DF1C /* Pods_RxStockDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */; };
 		596ABFECAE8D52466394E560 /* Pods_RxStockDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE633173BED12E1D769A5740 /* Pods_RxStockDemoTests.framework */; };
+		F2535E2217CED12235665F63 /* Pods_RxStockDemo_RxStockDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8999AC3EE4C76AEE94139F7 /* Pods_RxStockDemo_RxStockDemoTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		011F06681FB421B100F681B5 /* SandPApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApiTests.swift; sourceTree = "<group>"; };
 		01349BAD1FB14DE2000FDD5E /* RxStockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BB01FB14DE2000FDD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01349BB21FB14DE2000FDD5E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -38,10 +42,14 @@
 		01349BC11FB14DE2000FDD5E /* RxStockDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxStockDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxStockDemoTests.swift; sourceTree = "<group>"; };
 		01349BC71FB14DE2000FDD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo-RxStockDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStockDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		50228966AA6879A31429A5A4 /* Pods-RxStockDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo.release.xcconfig"; sourceTree = "<group>"; };
 		5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8999AC3EE4C76AEE94139F7 /* Pods_RxStockDemo_RxStockDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStockDemo_RxStockDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE633173BED12E1D769A5740 /* Pods_RxStockDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStockDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -60,12 +68,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				596ABFECAE8D52466394E560 /* Pods_RxStockDemoTests.framework in Frameworks */,
+				F2535E2217CED12235665F63 /* Pods_RxStockDemo_RxStockDemoTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		011F066A1FB421BD00F681B5 /* SAndPApi */ = {
+			isa = PBXGroup;
+			children = (
+				011F06681FB421B100F681B5 /* SandPApiTests.swift */,
+			);
+			path = SAndPApi;
+			sourceTree = "<group>";
+		};
 		01349BA41FB14DE2000FDD5E = {
 			isa = PBXGroup;
 			children = (
@@ -95,6 +112,7 @@
 				01349BB71FB14DE2000FDD5E /* Assets.xcassets */,
 				01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */,
 				01349BBC1FB14DE2000FDD5E /* Info.plist */,
+				01A20E471FB32D1B00B5A349 /* SAndPApi */,
 			);
 			path = RxStockDemo;
 			sourceTree = "<group>";
@@ -104,8 +122,17 @@
 			children = (
 				01349BC51FB14DE2000FDD5E /* RxStockDemoTests.swift */,
 				01349BC71FB14DE2000FDD5E /* Info.plist */,
+				011F066A1FB421BD00F681B5 /* SAndPApi */,
 			);
 			path = RxStockDemoTests;
+			sourceTree = "<group>";
+		};
+		01A20E471FB32D1B00B5A349 /* SAndPApi */ = {
+			isa = PBXGroup;
+			children = (
+				01A20E451FB2FD0900B5A349 /* SandPApi.swift */,
+			);
+			path = SAndPApi;
 			sourceTree = "<group>";
 		};
 		54C62E8D0FB91B2FB5B9E002 /* Pods */ = {
@@ -115,6 +142,8 @@
 				50228966AA6879A31429A5A4 /* Pods-RxStockDemo.release.xcconfig */,
 				5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */,
 				B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */,
+				603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */,
+				4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -124,6 +153,7 @@
 			children = (
 				4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */,
 				FE633173BED12E1D769A5740 /* Pods_RxStockDemoTests.framework */,
+				A8999AC3EE4C76AEE94139F7 /* Pods_RxStockDemo_RxStockDemoTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -259,7 +289,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxStockDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxStockDemo-RxStockDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -272,7 +302,15 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
@@ -281,6 +319,14 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
@@ -289,7 +335,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF113F5155BD29071CC3092 /* [CP] Check Pods Manifest.lock */ = {
@@ -322,7 +368,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9ACBA9BD25BD03C5C3C1D8 /* [CP] Embed Pods Frameworks */ = {
@@ -366,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
 				01349BB31FB14DE2000FDD5E /* ViewController.swift in Sources */,
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
 			);
@@ -376,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01349BC61FB14DE2000FDD5E /* RxStockDemoTests.swift in Sources */,
+				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +460,7 @@
 		01349BC81FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -459,16 +508,18 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
 		01349BC91FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -513,6 +564,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
@@ -520,15 +572,18 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
 				INFOPLIST_FILE = RxStockDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
@@ -536,6 +591,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50228966AA6879A31429A5A4 /* Pods-RxStockDemo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
@@ -545,33 +601,38 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
 		01349BCE1FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ENT2ZH45DM;
 				INFOPLIST_FILE = RxStockDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxStockDemo.app/RxStockDemo";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
 		};
 		01349BCF1FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */;
+			baseConfigurationReference = 4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ENT2ZH45DM;
 				INFOPLIST_FILE = RxStockDemoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemoTests;
@@ -579,6 +640,7 @@
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxStockDemo.app/RxStockDemo";
+				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Release;
 		};
