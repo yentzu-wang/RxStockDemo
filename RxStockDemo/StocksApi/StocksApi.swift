@@ -50,7 +50,11 @@ struct Price {
     }
 }
 
-final class StocksApi {
+protocol StocksApiProtocol {
+    func intraDayQuery(symbol: String, interval: QueryInterval) -> Observable<Stock>
+}
+
+final class StocksApi: StocksApiProtocol {
     static let shared = StocksApi()
     private let url = "https://www.alphavantage.co/query"
     private let bag = DisposeBag()
