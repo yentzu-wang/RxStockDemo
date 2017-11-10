@@ -16,6 +16,7 @@ import OHHTTPStubs
 @testable import RxStockDemo
 
 class SandPApiTests: XCTestCase {
+    var sut: MockSandPApi!
     var testObj: [Symbol]!
     let foo1 = Symbol(name: "foo1", sector: "foo1", symbol: "foo1")
     
@@ -25,6 +26,7 @@ class SandPApiTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
+        sut = MockSandPApi()
         testObj = [Symbol]()
         testObj.append(foo1)
         stub(condition: isHost(url)) { _ in
@@ -60,6 +62,23 @@ class SandPApiTests: XCTestCase {
         }
         
         expect(erroredCorrectly) == true
+    }
+    
+    func testGetSymbols() {
+        let symbol = sut.getSymbols()
+        .toBlocking()
+        .firstOrNil()
+        
+        expect(symbol).notTo(beNil())
+    }
+}
+
+extension SandPApiTests {
+    class MockSandPApi: SandPApiProtocol {
+        func getSymbols() -> Observable<[Symbol]> {
+            let symbol = Symbol(name: "foo", sector: "foo", symbol: "foo")
+            return Observable.just([symbol])
+        }
     }
 }
 
