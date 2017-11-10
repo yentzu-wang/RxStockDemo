@@ -71,3 +71,5 @@ fastlane/test_output
 # Firebase
 GoogleService-Info.plist
 
+# RxStockDemo
+ApiKeys.swift

@@ -17,13 +17,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SandPApi.shared.getSymbols()
-            .subscribe(onNext: { (symbols) in
-                print(symbols)
+//        SandPApi.shared.getSymbols()
+//            .subscribe(onNext: { (symbols) in
+//                print(symbols)
+//            }, onError: { (error) in
+//                print(error)
+//            })
+//            .disposed(by: bag)
+        StocksApi.shared.intraDayQuery(symbol: "MSFT", interval: .oneMin)
+            .subscribe(onNext: { (test) in
+                print(test)
             }, onError: { (error) in
                 print(error)
             })
-            .disposed(by: bag)
+        .disposed(by: bag)
+        
+        
     }
 }
 
