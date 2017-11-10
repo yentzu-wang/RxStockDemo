@@ -16,7 +16,7 @@ import OHHTTPStubs
 @testable import RxStockDemo
 
 class StocksApiTests: XCTestCase {
-    var sut: MockStocksApiTests!
+    var sut: MockStocksApi!
     var testObj: Stock!
     let price = Price(open: 0, high: 0, low: 0, close: 0, volume: 0)
     
@@ -26,7 +26,7 @@ class StocksApiTests: XCTestCase {
     override func setUp() {
         super.setUp()
         
-        sut = MockStocksApiTests()
+        sut = MockStocksApi()
         testObj = Stock(symbol: "foo", dateTime: "2017-1-1 13:20:00", price: price)
         stub(condition: isHost(url)) { _ in
             return OHHTTPStubsResponse(jsonObject: self.testObj, statusCode: 200, headers: nil)
@@ -84,7 +84,7 @@ class StocksApiTests: XCTestCase {
 }
 
 extension StocksApiTests {
-    class MockStocksApiTests: StocksApiProtocol {
+    class MockStocksApi: StocksApiProtocol {
         func intraDayQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
             let price = Price(open: 0, high: 0, low: 0, close: 0, volume: 0)
             let testObj = Stock(symbol: symbol, dateTime: "2015-2-3 14:20:00", price: price)
