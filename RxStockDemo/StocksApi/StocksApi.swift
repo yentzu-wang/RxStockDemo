@@ -14,6 +14,7 @@ import Foundation
 import RxSwift
 import RxAlamofire
 import GameplayKit
+import RealmSwift
 
 enum QueryInterval: String {
     case oneMin = "1min"
@@ -60,6 +61,27 @@ final class StocksApi: StocksApiProtocol {
     private let bag = DisposeBag()
     
     private init() {}
+    
+    func parseIntraDayHistoryDataToRealm(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
+        return intraDayHistoryQuery(symbol: symbol, interval: interval)
+            .do(onNext: { stocks in
+                _ = stocks.map({ stock in
+                    let realm = try! Realm()
+                    try! realm.write {
+                        let stockPrice = StockPrice()
+                        stockPrice.symbol = symbol
+                        stockPrice.date = stock.dateTime.toDate!
+                        stockPrice.open = stock.price.open
+                        stockPrice.high = stock.price.high
+                        stockPrice.low = stock.price.low
+                        stockPrice.close = stock.price.close
+                        stockPrice.volume = stock.price.volume
+                        
+                        realm.add(stockPrice, update: true)
+                    }
+                })
+            })
+    }
     
     func intraDayHistoryQuery(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
         let params = ["function": "TIME_SERIES_INTRADAY",

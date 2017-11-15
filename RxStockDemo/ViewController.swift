@@ -17,13 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        StocksApi.shared.intraDayHistoryQuery(symbol: "CAT", interval: .oneMin)
-            .subscribe(onNext: { (stock) in
-                print(stock)
+        StocksApi.shared.parseIntraDayHistoryDataToRealm(symbol: "CAT", interval: .oneMin)
+            .subscribe(onNext: { (stocks) in
+                print(stocks)
             })
         .disposed(by: bag)
-        
-        
     }
 }
 
