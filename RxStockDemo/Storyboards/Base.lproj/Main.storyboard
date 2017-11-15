@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bie-bn-wYg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RxStockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="rYH-Iu-O4H"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-692" y="1633"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="xgS-z3-GAk">
+            <objects>
+                <viewController id="MxB-Gg-ehg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oup-68-VJq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Y2-Oj-q96"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LVD-3y-77P"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j5f-0i-UZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="1632"/>
+        </scene>
+        <!--Animated Tab Bar Controller-->
+        <scene sceneID="8NC-rJ-cTi">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="bie-bn-wYg" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EsF-Rx-zTx">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q7m-jl-kg4" kind="relationship" relationship="viewControllers" id="h3b-Oq-HBv"/>
+                        <segue destination="Jlh-Z4-4fO" kind="relationship" relationship="viewControllers" id="X4E-Lb-CEl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMQ-7d-BLV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-246.40000000000001" y="32.383808095952027"/>
+        </scene>
+        <!--Stock-->
+        <scene sceneID="iQL-4M-GSm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q7m-jl-kg4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Stock" image="tab_stock" id="M0f-Uj-Tt4" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="d71-nr-sjK" id="pqe-9x-0o2"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="uhA-Co-eL7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="y4a-F2-fw6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cWb-Ar-BWf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="d71-nr-sjK" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
+            </objects>
+            <point key="canvasLocation" x="-691.20000000000005" y="806.89655172413802"/>
+        </scene>
+        <!--Sector-->
+        <scene sceneID="Rtw-we-OUJ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jlh-Z4-4fO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Sector" image="tab_index" id="Apl-nH-y9K" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <connections>
+                            <outlet property="animation" destination="dM5-Tr-Up9" id="PpS-VF-vCb"/>
+                        </connections>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i5K-3C-KFP">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="MxB-Gg-ehg" kind="relationship" relationship="rootViewController" id="xFa-tA-3lN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u8I-Vn-KGL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="dM5-Tr-Up9" customClass="RAMBounceAnimation" customModule="RAMAnimatedTabBarController"/>
+            </objects>
+            <point key="canvasLocation" x="244.80000000000001" y="805.99700149925047"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tab_index" width="25" height="25"/>
+        <image name="tab_stock" width="25" height="25"/>
+    </resources>
+</document>

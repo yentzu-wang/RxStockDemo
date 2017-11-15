@@ -118,16 +118,15 @@
 		01349BAF1FB14DE2000FDD5E /* RxStockDemo */ = {
 			isa = PBXGroup;
 			children = (
-				01349BB01FB14DE2000FDD5E /* AppDelegate.swift */,
-				01349BB71FB14DE2000FDD5E /* Assets.xcassets */,
-				01A2A5A61FB4CE6A006399CA /* Extensions */,
 				01349BBC1FB14DE2000FDD5E /* Info.plist */,
-				01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */,
-				01349BB41FB14DE2000FDD5E /* Main.storyboard */,
+				01349BB01FB14DE2000FDD5E /* AppDelegate.swift */,
+				01349BB21FB14DE2000FDD5E /* ViewController.swift */,
+				01A2A5A61FB4CE6A006399CA /* Extensions */,
 				014B63A61FB9BA8400F19483 /* Model */,
+				018E84681FBC5B13008C34CC /* Resources */,
 				01A20E471FB32D1B00B5A349 /* SAndPApi */,
 				01A2A59A1FB45339006399CA /* StocksApi */,
-				01349BB21FB14DE2000FDD5E /* ViewController.swift */,
+				018E84691FBC5B72008C34CC /* Storyboards */,
 			);
 			path = RxStockDemo;
 			sourceTree = "<group>";
@@ -150,6 +149,23 @@
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		018E84681FBC5B13008C34CC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				01349BB71FB14DE2000FDD5E /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		018E84691FBC5B72008C34CC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */,
+				01349BB41FB14DE2000FDD5E /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		01A20E471FB32D1B00B5A349 /* SAndPApi */ = {
@@ -339,7 +355,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxStockDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxStockDemo-RxStockDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -352,9 +368,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -370,7 +388,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -385,7 +405,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF113F5155BD29071CC3092 /* [CP] Check Pods Manifest.lock */ = {
@@ -418,7 +438,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9ACBA9BD25BD03C5C3C1D8 /* [CP] Embed Pods Frameworks */ = {
@@ -429,7 +449,9 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -441,7 +463,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -663,7 +687,7 @@
 		};
 		01349BCE1FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -683,7 +707,7 @@
 		};
 		01349BCF1FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */;
+			baseConfigurationReference = 4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
