@@ -16,4 +16,12 @@ extension String {
     var toInt: Int {
         return Int(self) ?? 0
     }
+    
+    var toDate: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:00"
+        let date = dateFormatter.date(from: self)
+        
+        return date
+    }
 }
