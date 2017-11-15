@@ -31,6 +31,7 @@ final class SandPApi: SandPApiProtocol {
     static let shared = SandPApi()
     private let symbolUrl = "https://pkgstore.datahub.io/core/s-and-p-500-companies:constituents_json/data/constituents_json.json"
     private let bag = DisposeBag()
+    
     private init() {}
     
     func getSymbols() -> Observable<[Symbol]> {
