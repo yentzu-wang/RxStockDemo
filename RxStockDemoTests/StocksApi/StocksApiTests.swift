@@ -74,8 +74,8 @@ class StocksApiTests: XCTestCase {
         expect(observable).notTo(beNil())
     }
     
-    func testIntraDayQuery() {
-        let stock = sut.intraDayQuery(symbol: "foo", interval: .fiveMins)
+    func testIntraDayRealTimeQuery() {
+        let stock = sut.intraDayRealTimeQuery(symbol: "foo", interval: .fiveMins)
             .toBlocking()
             .firstOrNil()
         
@@ -85,7 +85,7 @@ class StocksApiTests: XCTestCase {
 
 extension StocksApiTests {
     class MockStocksApi: StocksApiProtocol {
-        func intraDayQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
+        func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
             let price = Price(open: 0, high: 0, low: 0, close: 0, volume: 0)
             let testObj = Stock(symbol: symbol, dateTime: "2015-2-3 14:20:00", price: price)
             return Observable.just(testObj)

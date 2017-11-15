@@ -17,9 +17,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        SandPApi.shared.parseDataToRealm()
-        
-        
+        StocksApi.shared.parseIntraDayHistoryDataToRealm(symbol: "CAT", interval: .oneMin)
+            .subscribe(onNext: { (stocks) in
+                print(stocks)
+            })
+        .disposed(by: bag)
     }
 }
 

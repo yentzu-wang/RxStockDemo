@@ -14,6 +14,7 @@ import Foundation
 import RxSwift
 import RxAlamofire
 import GameplayKit
+import RealmSwift
 
 enum QueryInterval: String {
     case oneMin = "1min"
@@ -51,7 +52,7 @@ struct Price {
 }
 
 protocol StocksApiProtocol {
-    func intraDayQuery(symbol: String, interval: QueryInterval) -> Observable<Stock>
+    func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock>
 }
 
 final class StocksApi: StocksApiProtocol {
@@ -61,7 +62,28 @@ final class StocksApi: StocksApiProtocol {
     
     private init() {}
     
-    func intraDayQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
+    func parseIntraDayHistoryDataToRealm(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
+        return intraDayHistoryQuery(symbol: symbol, interval: interval)
+            .do(onNext: { stocks in
+                _ = stocks.map({ stock in
+                    let realm = try! Realm()
+                    try! realm.write {
+                        let stockPrice = StockPrice()
+                        stockPrice.symbol = symbol
+                        stockPrice.date = stock.dateTime.toDate!
+                        stockPrice.open = stock.price.open
+                        stockPrice.high = stock.price.high
+                        stockPrice.low = stock.price.low
+                        stockPrice.close = stock.price.close
+                        stockPrice.volume = stock.price.volume
+                        
+                        realm.add(stockPrice, update: true)
+                    }
+                })
+            })
+    }
+    
+    func intraDayHistoryQuery(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
         let params = ["function": "TIME_SERIES_INTRADAY",
                       "symbol": symbol,
                       "outputsize": "compact",
@@ -69,7 +91,43 @@ final class StocksApi: StocksApiProtocol {
                       "apikey": getRandomKey()]
         
         return requestJSON(try! urlRequest(.get, url, parameters: params))
-            .flatMap { (arg) -> Observable<Stock> in
+            .flatMap { arg -> Observable<[Stock]> in
+                guard arg.0.statusCode == 200 else {
+                    throw RxAlamofireUnknownError
+                }
+                
+                if let json = arg.1 as? [String: Any],
+                    let price = json["Time Series (\(interval.rawValue))"] as? [String: Any] {
+                    let stocks = price.map { arg -> Stock in
+                        let value = arg.value as! [String: String]
+                        let open = value["1. open"]!.toDouble
+                        let high = value["2. high"]!.toDouble
+                        let low = value["3. low"]!.toDouble
+                        let close = value["4. close"]!.toDouble
+                        let volume = value["5. volume"]!.toInt
+                        
+                        let price = Price(open: open, high: high, low: low, close: close, volume: volume)
+                        let stock = Stock(symbol: symbol, dateTime: arg.key, price: price)
+                        
+                        return stock
+                    }
+                    
+                    return Observable.of(stocks)
+                } else {
+                    throw RxAlamofireUnknownError
+                }
+        }
+    }
+    
+    func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
+        let params = ["function": "TIME_SERIES_INTRADAY",
+                      "symbol": symbol,
+                      "outputsize": "compact",
+                      "interval": interval.rawValue,
+                      "apikey": getRandomKey()]
+        
+        return requestJSON(try! urlRequest(.get, url, parameters: params))
+            .flatMap { arg -> Observable<Stock> in
                 guard arg.0.statusCode == 200 else {
                     throw RxAlamofireUnknownError
                 }
