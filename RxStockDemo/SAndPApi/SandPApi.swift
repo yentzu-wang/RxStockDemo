@@ -55,22 +55,13 @@ final class SandPApi: SandPApiProtocol {
                 _ = symbols.map({ symbol in
                     let realm = try! Realm()
                     
-                    guard let stockSymbol = realm.object(ofType: StockSymbol.self, forPrimaryKey: symbol.symbol!) else {
+                    try! realm.write {
                         let stockSymbol = StockSymbol()
                         stockSymbol.symbol = symbol.symbol!
                         stockSymbol.name = symbol.name!
                         stockSymbol.sector = symbol.sector!
                         
-                        try! realm.write {
-                            realm.add(stockSymbol)
-                        }
-                        
-                        return
-                    }
-                    
-                    try! realm.write {
-                        stockSymbol.name = symbol.name!
-                        stockSymbol.sector = symbol.sector!
+                        realm.add(stockSymbol, update: true)
                     }
                 })
             })
