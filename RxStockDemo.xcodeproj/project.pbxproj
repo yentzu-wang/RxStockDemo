@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF4F1FBBFC4000516DBB /* StockPrice.swift */; };
 		010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF511FBC336B00516DBB /* StockPortfolio.swift */; };
+		011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */; };
 		011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F06681FB421B100F681B5 /* SandPApiTests.swift */; };
 		01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB01FB14DE2000FDD5E /* AppDelegate.swift */; };
 		01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		010EDF4F1FBBFC4000516DBB /* StockPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPrice.swift; sourceTree = "<group>"; };
 		010EDF511FBC336B00516DBB /* StockPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPortfolio.swift; sourceTree = "<group>"; };
+		011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
 		011F06681FB421B100F681B5 /* SandPApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApiTests.swift; sourceTree = "<group>"; };
 		01349BAD1FB14DE2000FDD5E /* RxStockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BB01FB14DE2000FDD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
+				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -499,6 +502,7 @@
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
 				01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */,
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
+				011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */,
 				014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */,
 				01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */,
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
