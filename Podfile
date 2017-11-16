@@ -13,13 +13,15 @@ def my_pods
   pod 'RxRealm'
   pod 'Alamofire'
   pod 'RxAlamofire'
+  pod 'RAMAnimatedTabBarController'
+  pod 'DZNEmptyDataSet'
 end
 
   # Pods for RxStockDemo
   my_pods
 
   target 'RxStockDemoTests' do
-    inherit! :search_paths
+    # inherit! :search_paths
     my_pods
     pod 'RxNimble'
     pod 'RxBlocking'
