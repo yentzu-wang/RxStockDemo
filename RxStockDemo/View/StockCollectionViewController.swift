@@ -41,6 +41,13 @@ class StockCollectionViewController: UIViewController {
         }
         .disposed(by: bag)
         
+        let addButton = navigationItem.rightBarButtonItem
+        
+        addButton?.rx.tap
+            .subscribe(onNext: {
+                self.performSegue(withIdentifier: "ToStockPicker", sender: nil)
+            })
+        .disposed(by: bag)
     }
 }
 

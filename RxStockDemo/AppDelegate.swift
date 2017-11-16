@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         UIApplication.shared.statusBarStyle = .lightContent
+        window?.tintColor = UIColor(red: 250.0 / 255, green: 159.0 / 255, blue: 0, alpha: 1)
         
         return true
     }
