@@ -122,9 +122,9 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="changePercentageLabel" destination="gZd-EK-JCb" id="daN-rL-byc"/>
-                                            <outlet property="nameLabel" destination="Om0-RC-XWW" id="oID-f0-7oE"/>
                                             <outlet property="priceChangeLabel" destination="r65-D2-DwC" id="KEw-68-PNB"/>
                                             <outlet property="priceLabel" destination="6F6-eT-b8E" id="6K5-HJ-z7c"/>
+                                            <outlet property="symbolLabel" destination="Om0-RC-XWW" id="oID-f0-7oE"/>
                                             <outlet property="updownImage" destination="1sd-KP-3qk" id="CET-dG-XOF"/>
                                             <outlet property="view" destination="QC8-is-Q1x" id="VKf-uY-rjk"/>
                                         </connections>

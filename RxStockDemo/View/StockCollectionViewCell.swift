@@ -10,7 +10,7 @@ import UIKit
 
 class StockCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var view: UIView!
-    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var symbolLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var priceChangeLabel: UILabel!
     @IBOutlet weak var changePercentageLabel: UILabel!
