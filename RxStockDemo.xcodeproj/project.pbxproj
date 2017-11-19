@@ -16,6 +16,8 @@
 		01349BB61FB14DE2000FDD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB41FB14DE2000FDD5E /* Main.storyboard */; };
 		01349BB81FB14DE2000FDD5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB71FB14DE2000FDD5E /* Assets.xcassets */; };
 		01349BBB1FB14DE2000FDD5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB91FB14DE2000FDD5E /* LaunchScreen.storyboard */; };
+		014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */; };
+		014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */; };
 		014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B63A41FB9BA7C00F19483 /* StockSymbol.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5981FB4531A006399CA /* StocksApi.swift */; };
@@ -51,6 +53,8 @@
 		01349BBC1FB14DE2000FDD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		01349BC11FB14DE2000FDD5E /* RxStockDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RxStockDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BC71FB14DE2000FDD5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewController.swift; sourceTree = "<group>"; };
+		014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		014B63A41FB9BA7C00F19483 /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		01A2A5981FB4531A006399CA /* StocksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApi.swift; sourceTree = "<group>"; };
@@ -122,9 +126,10 @@
 			children = (
 				01349BBC1FB14DE2000FDD5E /* Info.plist */,
 				01349BB01FB14DE2000FDD5E /* AppDelegate.swift */,
-				018E846A1FBCA5F3008C34CC /* View */,
-				01A2A5A61FB4CE6A006399CA /* Extensions */,
 				014B63A61FB9BA8400F19483 /* Model */,
+				018E846A1FBCA5F3008C34CC /* View */,
+				014246CD1FBEB13A0041FD63 /* View Model */,
+				01A2A5A61FB4CE6A006399CA /* Extensions */,
 				018E84681FBC5B13008C34CC /* Resources */,
 				01A20E471FB32D1B00B5A349 /* SAndPApi */,
 				01A2A59A1FB45339006399CA /* StocksApi */,
@@ -141,6 +146,14 @@
 				01A2A59D1FB45361006399CA /* StocksApi */,
 			);
 			path = RxStockDemoTests;
+			sourceTree = "<group>";
+		};
+		014246CD1FBEB13A0041FD63 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		014B63A61FB9BA8400F19483 /* Model */ = {
@@ -175,6 +188,7 @@
 			children = (
 				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
+				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -390,6 +404,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
@@ -408,6 +423,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
@@ -469,6 +485,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -483,6 +500,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,6 +515,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */,
 				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
 				01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */,
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
@@ -506,6 +525,7 @@
 				014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */,
 				01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */,
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
+				014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */,
 				010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

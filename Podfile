@@ -11,6 +11,7 @@ def my_pods
   pod 'RxDataSources'
   pod 'Realm'
   pod 'RxRealm'
+  pod 'RxRealmDataSources'
   pod 'Alamofire'
   pod 'RxAlamofire'
   pod 'RAMAnimatedTabBarController'
