@@ -20,8 +20,8 @@ class StocksApiTests: XCTestCase {
     var testObj: Stock!
     let price = Price(open: 0, high: 0, low: 0, close: 0, volume: 0)
     
-    let url = "https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=MSFT&interval=1min&outputsize=full"
-    let fakeUrl = "http://fakeurl.com"
+    let url = "api.example.com"
+    let fakeUrl = "fake.url.com"
     
     override func setUp() {
         super.setUp()

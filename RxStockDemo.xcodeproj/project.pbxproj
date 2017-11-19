@@ -19,6 +19,7 @@
 		014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */; };
 		014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */; };
 		014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B63A41FB9BA7C00F19483 /* StockSymbol.swift */; };
+		014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5981FB4531A006399CA /* StocksApi.swift */; };
 		01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A59B1FB4535C006399CA /* StocksApiTests.swift */; };
@@ -56,6 +57,7 @@
 		014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewController.swift; sourceTree = "<group>"; };
 		014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		014B63A41FB9BA7C00F19483 /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
+		014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModelTests.swift; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		01A2A5981FB4531A006399CA /* StocksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApi.swift; sourceTree = "<group>"; };
 		01A2A59B1FB4535C006399CA /* StocksApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApiTests.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				01349BC71FB14DE2000FDD5E /* Info.plist */,
 				011F066A1FB421BD00F681B5 /* SAndPApi */,
 				01A2A59D1FB45361006399CA /* StocksApi */,
+				014FBA351FC195680046B9FE /* ViewModel */,
 			);
 			path = RxStockDemoTests;
 			sourceTree = "<group>";
@@ -164,6 +167,14 @@
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		014FBA351FC195680046B9FE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		018E84681FBC5B13008C34CC /* Resources */ = {
@@ -380,7 +391,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxStockDemo-RxStockDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxStockDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -393,11 +404,9 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
-				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -414,9 +423,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -432,7 +439,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF113F5155BD29071CC3092 /* [CP] Check Pods Manifest.lock */ = {
@@ -465,7 +472,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9ACBA9BD25BD03C5C3C1D8 /* [CP] Embed Pods Frameworks */ = {
@@ -534,6 +541,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 				01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */,
 			);
@@ -624,6 +632,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				VALID_ARCHS = "arm64 armv7";
 			};
 			name = Debug;
@@ -675,6 +684,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "arm64 armv7";
 			};
@@ -684,15 +694,17 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = RxStockDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7";
@@ -703,14 +715,16 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 50228966AA6879A31429A5A4 /* Pods-RxStockDemo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
+				ENABLE_ON_DEMAND_RESOURCES = NO;
 				INFOPLIST_FILE = RxStockDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = all;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "arm64 armv7";
@@ -719,9 +733,9 @@
 		};
 		01349BCE1FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
@@ -730,6 +744,7 @@
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxStockDemo.app/RxStockDemo";
@@ -739,9 +754,9 @@
 		};
 		01349BCF1FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */;
+			baseConfigurationReference = B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ENT2ZH45DM;
@@ -749,6 +764,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ZombieWang.RxStockDemoTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_REFLECTION_METADATA_LEVEL = none;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxStockDemo.app/RxStockDemo";

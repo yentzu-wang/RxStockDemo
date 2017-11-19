@@ -20,8 +20,8 @@ class SandPApiTests: XCTestCase {
     var testObj: [Symbol]!
     let foo1 = Symbol(name: "foo1", sector: "foo1", symbol: "foo1")
     
-    let url = "https://pkgstore.datahub.io/core/s-and-p-500-companies:constituents_json/data/constituents_json.json"
-    let fakeUrl = "http://fakeurl.com"
+    let url = "api.example.com"
+    let fakeUrl = "fake.url.com"
     
     override func setUp() {
         super.setUp()
