@@ -12,6 +12,7 @@ import RxCocoa
 import RxRealm
 import RealmSwift
 import RxRealmDataSources
+import DZNEmptyDataSet
 
 class SymbolPickerViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
@@ -22,6 +23,9 @@ class SymbolPickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         
         viewModel = SymbolPickerViewModel()
         
@@ -49,6 +53,10 @@ class SymbolPickerViewController: UIViewController {
         let dataSource = RxTableViewRealmDataSource<StockSymbol>(cellIdentifier: "SymbolCell", cellType: UITableViewCell.self) { cell, indexPath, symbol in
             cell.textLabel?.text = symbol.name
             cell.detailTextLabel?.text = symbol.symbol
+            
+            let separatorLine = UIImageView(frame: CGRect(x: 8, y: 64, width: cell.frame.width - 16, height: 0.5))
+            separatorLine.backgroundColor = .gray
+            cell.contentView.addSubview(separatorLine)
         }
 
         var objects: Results<StockSymbol>
@@ -66,5 +74,17 @@ class SymbolPickerViewController: UIViewController {
         objectsObservable
             .bind(to: tableView.rx.realmChanges(dataSource))
             .disposed(by: bag)
+    }
+}
+
+extension SymbolPickerViewController: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        let str = "No Data"
+        let attrs = [NSAttributedStringKey.font: UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)]
+        return NSAttributedString(string: str, attributes: attrs)
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return #imageLiteral(resourceName: "NoData")
     }
 }
