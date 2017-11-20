@@ -10,7 +10,11 @@ import Foundation
 import RxSwift
 import RealmSwift
 
-class SymbolPickerViewModel {
+protocol SymbolPickerProtocol {
+    var symbols: Results<StockSymbol> { get set }
+}
+
+class SymbolPickerViewModel: SymbolPickerProtocol {
     var symbols: Results<StockSymbol>
     
     init() {

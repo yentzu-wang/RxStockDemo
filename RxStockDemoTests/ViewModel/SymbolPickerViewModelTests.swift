@@ -11,14 +11,16 @@ import RxSwift
 import RxBlocking
 import Nimble
 import RxNimble
+import RealmSwift
 @testable import RxStockDemo
 
 class SymbolPickerViewModelTests: XCTestCase {
-    var sut: SymbolPickerViewModel!
+    var sut: SymbolPickerProtocol!
+    
     override func setUp() {
         super.setUp()
         
-        sut = SymbolPickerViewModel()
+        sut = MockSymbolPickerViewModel()
     }
     
     override func tearDown() {
@@ -26,4 +28,18 @@ class SymbolPickerViewModelTests: XCTestCase {
         super.tearDown()
     }
     
+    func testSymbolsNotNil() {
+        expect(self.sut.symbols).notTo(beNil())
+    }
+}
+
+extension SymbolPickerViewModelTests {
+    class MockSymbolPickerViewModel: SymbolPickerProtocol {
+        var symbols: Results<StockSymbol>
+        
+        init() {
+            let realm = try! Realm()
+            symbols = realm.objects(StockSymbol.self).sorted(byKeyPath: "symbol", ascending: true)
+        }
+    }
 }
