@@ -47,6 +47,23 @@ class SymbolPickerViewController: UIViewController {
                 self?.bindTableView(term)
             })
             .disposed(by: bag)
+        
+        tableView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                if let cell = self?.tableView.cellForRow(at: indexPath) {
+                    let realm = try! Realm()
+                    
+                    try! realm.write {
+                        let stockPortfolio = StockPortfolio()
+                        stockPortfolio.symbol = cell.detailTextLabel!.text!
+                        
+                        realm.add(stockPortfolio, update: true)
+                    }
+                    
+                    self?.navigationController?.popViewController(animated: true)
+                }
+            })
+        .disposed(by: bag)
     }
 
     private func bindTableView(_ term: String) {
