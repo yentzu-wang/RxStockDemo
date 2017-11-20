@@ -11,6 +11,7 @@ import RealmSwift
 
 class StockPortfolio: Object {
     @objc dynamic var symbol: String = ""
+    let lastTradeDayClose = RealmOptional<Double>()
     
     override static func primaryKey() -> String? {
         return "symbol"

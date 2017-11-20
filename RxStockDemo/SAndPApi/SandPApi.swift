@@ -50,7 +50,10 @@ final class SandPApi: SandPApiProtocol {
     }
     
     func parseDataToRealm() {
+        let scheduler = ConcurrentDispatchQueueScheduler(qos: .default)
         _ = getSymbols()
+            .observeOn(scheduler)
+            .subscribeOn(MainScheduler.instance)
             .subscribe(onNext: { (symbols) in
                 _ = symbols.map({ symbol in
                     let realm = try! Realm()

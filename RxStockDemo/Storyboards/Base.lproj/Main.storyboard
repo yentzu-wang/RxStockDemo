@@ -15,10 +15,11 @@
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
             <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Stock Collection View Controller-->
+        <!-- -->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StockCollectionViewController" customModule="RxStockDemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -141,13 +142,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rYH-Iu-O4H">
+                    <navigationItem key="navigationItem" title=" " id="rYH-Iu-O4H">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6Um-wW-9Fb">
                             <color key="tintColor" red="0.9801082015" green="0.62260907889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="yPf-Xu-zCt" id="u6x-Xp-BkS"/>
+                        <segue destination="xDO-I1-ZxX" kind="show" identifier="ToStockPicker" id="vqn-8e-ew8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,6 +162,71 @@
                 </label>
             </objects>
             <point key="canvasLocation" x="-692" y="1632.2338830584708"/>
+        </scene>
+        <!--Symbol Picker View Controller-->
+        <scene sceneID="i7t-hF-1cU">
+            <objects>
+                <viewController id="xDO-I1-ZxX" customClass="SymbolPickerViewController" customModule="RxStockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Daz-BJ-P2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="7ta-aS-qSo">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xRC-5m-BKH">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SymbolCell" textLabel="cCR-1S-qa2" detailTextLabel="mMB-4c-XT6" style="IBUITableViewCellStyleSubtitle" id="1Yo-tl-O4R">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="1Yo-tl-O4R" id="vdz-OA-iBJ" userLabel="I">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cCR-1S-qa2">
+                                                    <rect key="frame" x="15" y="-1" width="33.5" height="23.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mMB-4c-XT6">
+                                                    <rect key="frame" x="15" y="22.5" width="59.5" height="23.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" red="0.9801082015" green="0.62260907889999995" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.098023496569999993" green="0.098048247399999996" blue="0.098021931950000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xRC-5m-BKH" firstAttribute="leading" secondItem="7Hg-ij-fqf" secondAttribute="leading" id="1KX-l9-QQd"/>
+                            <constraint firstItem="xRC-5m-BKH" firstAttribute="top" secondItem="7ta-aS-qSo" secondAttribute="bottom" id="FnH-QB-fyl"/>
+                            <constraint firstItem="7ta-aS-qSo" firstAttribute="top" secondItem="7Hg-ij-fqf" secondAttribute="top" id="Ixw-ia-xGY"/>
+                            <constraint firstItem="xRC-5m-BKH" firstAttribute="trailing" secondItem="7Hg-ij-fqf" secondAttribute="trailing" id="Mc2-g4-2HH"/>
+                            <constraint firstItem="7ta-aS-qSo" firstAttribute="trailing" secondItem="7Hg-ij-fqf" secondAttribute="trailing" id="XhB-PP-ogx"/>
+                            <constraint firstAttribute="bottom" secondItem="xRC-5m-BKH" secondAttribute="bottom" id="hNw-xU-H6o"/>
+                            <constraint firstItem="7ta-aS-qSo" firstAttribute="leading" secondItem="7Hg-ij-fqf" secondAttribute="leading" id="j2p-za-mE3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7Hg-ij-fqf"/>
+                    </view>
+                    <connections>
+                        <outlet property="searchBar" destination="7ta-aS-qSo" id="bJV-yv-Qkr"/>
+                        <outlet property="tableView" destination="xRC-5m-BKH" id="kMO-hU-3a2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qEP-Sp-L8m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-692" y="2399.5502248875564"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="xgS-z3-GAk">
