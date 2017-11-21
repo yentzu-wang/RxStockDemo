@@ -20,6 +20,8 @@
 		014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */; };
 		014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B63A41FB9BA7C00F19483 /* StockSymbol.swift */; };
 		014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */; };
+		0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */; };
+		0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5981FB4531A006399CA /* StocksApi.swift */; };
 		01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A59B1FB4535C006399CA /* StocksApiTests.swift */; };
@@ -58,6 +60,8 @@
 		014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		014B63A41FB9BA7C00F19483 /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
 		014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModelTests.swift; sourceTree = "<group>"; };
+		0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModel.swift; sourceTree = "<group>"; };
+		0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModelTests.swift; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		01A2A5981FB4531A006399CA /* StocksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApi.swift; sourceTree = "<group>"; };
 		01A2A59B1FB4535C006399CA /* StocksApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApiTests.swift; sourceTree = "<group>"; };
@@ -155,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
+				0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
+				0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -391,7 +397,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxStockDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxStockDemo-RxStockDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -404,9 +410,11 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -423,7 +431,9 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -439,7 +449,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF113F5155BD29071CC3092 /* [CP] Check Pods Manifest.lock */ = {
@@ -472,7 +482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9ACBA9BD25BD03C5C3C1D8 /* [CP] Embed Pods Frameworks */ = {
@@ -525,6 +535,7 @@
 				014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */,
 				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
 				01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */,
+				0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */,
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
 				01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */,
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
@@ -542,6 +553,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */,
+				0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 				01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */,
 			);
@@ -733,7 +745,7 @@
 		};
 		01349BCE1FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -754,7 +766,7 @@
 		};
 		01349BCF1FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */;
+			baseConfigurationReference = 4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";

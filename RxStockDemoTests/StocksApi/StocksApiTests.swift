@@ -63,7 +63,7 @@ class StocksApiTests: XCTestCase {
     }
     
     func testIntraDayRealTimeQuery() {
-        let stock = sut.intraDayRealTimeQuery(symbol: "foo", interval: .fiveMins)
+        let stock = sut.intraDayNewestQuery(symbol: "foo", interval: .fiveMins)
             .toBlocking()
             .firstOrNil()
         
@@ -73,10 +73,10 @@ class StocksApiTests: XCTestCase {
 
 extension StocksApiTests {
     class MockStocksApi: StocksApiProtocol {
-        func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
-            let price = Price(open: 0, high: 0, low: 0, close: 0, volume: 0)
-            let testObj = Stock(symbol: symbol, dateTime: "2015-2-3 14:20:00", price: price)
-            return Observable.just(testObj)
+        func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice> {
+            let stockPrice = StockPrice()
+            stockPrice.symbol = "foo"
+            return Observable.just(stockPrice)
         }
     }
 }

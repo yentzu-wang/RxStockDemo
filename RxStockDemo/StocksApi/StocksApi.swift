@@ -52,7 +52,7 @@ struct Price {
 }
 
 protocol StocksApiProtocol {
-    func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock>
+    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice>
 }
 
 final class StocksApi: StocksApiProtocol {
@@ -119,7 +119,7 @@ final class StocksApi: StocksApiProtocol {
         }
     }
     
-    func intraDayRealTimeQuery(symbol: String, interval: QueryInterval) -> Observable<Stock> {
+    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice> {
         let params = ["function": "TIME_SERIES_INTRADAY",
                       "symbol": symbol,
                       "outputsize": "compact",
@@ -127,42 +127,45 @@ final class StocksApi: StocksApiProtocol {
                       "apikey": getRandomKey()]
         
         return requestJSON(try! urlRequest(.get, url, parameters: params))
-            .flatMap { arg -> Observable<Stock> in
+            .flatMap { (arg) -> Observable<StockPrice> in
                 guard arg.0.statusCode == 200 else {
                     throw RxAlamofireUnknownError
                 }
                 
-                let date = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:00"
-                dateFormatter.timeZone = TimeZone(abbreviation: "EST")
-                let estDateTime = dateFormatter.string(from: date)
-                
-                if let json = arg.1 as? [String: Any],
-                    let price = json["Time Series (\(interval.rawValue))"] as? [String: Any],
-                    let currentPrice = price[estDateTime] as? [String: String],
-                    let open = currentPrice["1. open"],
-                    let high = currentPrice["2. high"],
-                    let low = currentPrice["3. low"],
-                    let close = currentPrice["4. close"],
-                    let volume = currentPrice["5. volume"] {
+                if let json = arg.1 as? [String: Any], let price = json["Time Series (\(interval.rawValue))"] as? [String: Any] {
+                    let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "InMemoryRealm"))
                     
-                    let open = open.toDouble
-                    let high = high.toDouble
-                    let low = low.toDouble
-                    let close = close.toDouble
-                    let volume = volume.toInt
+                    for keyValuePair in price {
+                        if let values = keyValuePair.value as? [String: String],
+                            let open = values["1. open"],
+                            let high = values["2. high"],
+                            let low = values["3. low"],
+                            let close = values["4. close"],
+                            let volume = values["5. volume"] {
+                            
+                            let stockPrice = StockPrice()
+                            stockPrice.symbol = symbol
+                            stockPrice.date = keyValuePair.key.toDate!
+                            stockPrice.open = open.toDouble
+                            stockPrice.high = high.toDouble
+                            stockPrice.low = low.toDouble
+                            stockPrice.close = close.toDouble
+                            stockPrice.volume = volume.toInt
+                            
+                            try! realm.write {
+                                realm.add(stockPrice, update: true)
+                            }
+                        }
+                    }
+                    let price = realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first!
                     
-                    let price = Price(open: open, high: high, low: low, close: close, volume: volume)
-                    let stock = Stock(symbol: symbol, dateTime: estDateTime, price: price)
-                    
-                    return Observable.just(stock)
+                    return Observable.just(price)
                 } else {
                     throw RxAlamofireUnknownError
                 }
         }
     }
-    
+
     private func getRandomKey() -> String {
         let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: apiKeys.count)
         

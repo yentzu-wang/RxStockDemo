@@ -9,7 +9,9 @@
 import UIKit
 import RxSwift
 import RxCocoa
-import RxDataSources
+import RxRealm
+import RealmSwift
+import RxRealmDataSources
 
 class StockCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,27 +21,27 @@ class StockCollectionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let foo = StockCollectionViewModel()
+//        foo.fetchStockPortfolio()
+        
         bindUI()
         
-        StocksApi.shared.parseIntraDayHistoryDataToRealm(symbol: "CAT", interval: .oneMin)
-            .subscribe(onNext: { (stocks) in
-                print(stocks)
-            })
-            .disposed(by: bag)
     }
     
     private func bindUI() {
         collectionView.rx.setDelegate(self)
             .disposed(by: bag)
         
-        let items = StocksApi.shared.intraDayHistoryQuery(symbol: "CAT", interval: .fiveMins)
         
-        items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
-            let indexPath = IndexPath(row: row, section: 0)
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stock", for: indexPath)
-            return cell
-        }
-        .disposed(by: bag)
+        
+        //        let items = StocksApi.shared.intraDayHistoryQuery(symbol: "CAT", interval: .fiveMins)
+        //
+        //        items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
+        //            let indexPath = IndexPath(row: row, section: 0)
+        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stock", for: indexPath)
+        //            return cell
+        //        }
+        //        .disposed(by: bag)
         
         let addButton = navigationItem.rightBarButtonItem
         
@@ -47,7 +49,13 @@ class StockCollectionViewController: UIViewController {
             .subscribe(onNext: {
                 self.performSegue(withIdentifier: "ToStockPicker", sender: nil)
             })
-        .disposed(by: bag)
+            .disposed(by: bag)
+    }
+    
+    private func bindCollectionView() {
+        let dataSource = RxCollectionViewRealmDataSource<StockPortfolio>(cellIdentifier: "Stock", cellType: StockCollectionViewCell.self) { (cell, indexPath, portfolio) in
+            
+        }
     }
 }
 
@@ -59,3 +67,4 @@ extension StockCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: cellWidth, height: cellWidth)
     }
 }
+

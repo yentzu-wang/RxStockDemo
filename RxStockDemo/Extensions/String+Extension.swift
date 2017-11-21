@@ -20,6 +20,7 @@ extension String {
     var toDate: Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:00"
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
         let date = dateFormatter.date(from: self)
         
         return date
