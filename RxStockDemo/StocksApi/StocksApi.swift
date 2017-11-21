@@ -52,7 +52,7 @@ struct Price {
 }
 
 protocol StocksApiProtocol {
-    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice>
+    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?>
 }
 
 final class StocksApi: StocksApiProtocol {
@@ -119,7 +119,7 @@ final class StocksApi: StocksApiProtocol {
         }
     }
     
-    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice> {
+    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
         let params = ["function": "TIME_SERIES_INTRADAY",
                       "symbol": symbol,
                       "outputsize": "compact",
@@ -127,7 +127,7 @@ final class StocksApi: StocksApiProtocol {
                       "apikey": getRandomKey()]
         
         return requestJSON(try! urlRequest(.get, url, parameters: params))
-            .flatMap { (arg) -> Observable<StockPrice> in
+            .flatMap { (arg) -> Observable<StockPrice?> in
                 guard arg.0.statusCode == 200 else {
                     throw RxAlamofireUnknownError
                 }
@@ -157,7 +157,7 @@ final class StocksApi: StocksApiProtocol {
                             }
                         }
                     }
-                    let price = realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first!
+                    let price = realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first
                     
                     return Observable.just(price)
                 } else {

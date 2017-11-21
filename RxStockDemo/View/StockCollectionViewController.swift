@@ -17,12 +17,20 @@ class StockCollectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private let bag = DisposeBag()
-    
+    private var viewModel: StockCollectionViewModel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let foo = StockCollectionViewModel()
+        viewModel = StockCollectionViewModel()
 //        foo.fetchStockPortfolio()
+        
+        viewModel.subscriptNewestPrice(symbol: "CAT", interval: QueryInterval.oneMin)
+        .asObservable()
+            .subscribe(onNext: { (price) in
+                print(price)
+            })
+        .disposed(by: bag)
         
         bindUI()
         
