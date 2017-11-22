@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0106CBD11FC542D5006883E3 /* StockSubscription.swift */; };
 		010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF4F1FBBFC4000516DBB /* StockPrice.swift */; };
 		010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF511FBC336B00516DBB /* StockPortfolio.swift */; };
 		011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */; };
@@ -20,6 +21,8 @@
 		014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */; };
 		014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B63A41FB9BA7C00F19483 /* StockSymbol.swift */; };
 		014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */; };
+		0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */; };
+		0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
 		01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5981FB4531A006399CA /* StocksApi.swift */; };
 		01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A59B1FB4535C006399CA /* StocksApiTests.swift */; };
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0106CBD11FC542D5006883E3 /* StockSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSubscription.swift; sourceTree = "<group>"; };
 		010EDF4F1FBBFC4000516DBB /* StockPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPrice.swift; sourceTree = "<group>"; };
 		010EDF511FBC336B00516DBB /* StockPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPortfolio.swift; sourceTree = "<group>"; };
 		011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 		014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		014B63A41FB9BA7C00F19483 /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
 		014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModelTests.swift; sourceTree = "<group>"; };
+		0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModel.swift; sourceTree = "<group>"; };
+		0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModelTests.swift; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
 		01A2A5981FB4531A006399CA /* StocksApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApi.swift; sourceTree = "<group>"; };
 		01A2A59B1FB4535C006399CA /* StocksApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApiTests.swift; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 		014246CD1FBEB13A0041FD63 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */,
 				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
 			);
 			path = "View Model";
@@ -162,9 +169,10 @@
 		014B63A61FB9BA8400F19483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
-				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
+				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
+				0106CBD11FC542D5006883E3 /* StockSubscription.swift */,
+				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
+				0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,8 +206,8 @@
 		018E846A1FBCA5F3008C34CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
+				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
 			);
 			path = View;
@@ -406,12 +415,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -423,12 +430,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -484,13 +489,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -499,13 +502,11 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -525,6 +526,7 @@
 				014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */,
 				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
 				01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */,
+				0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */,
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
 				01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */,
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
@@ -532,6 +534,7 @@
 				014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */,
 				01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */,
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
+				0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */,
 				014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */,
 				010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */,
 			);
@@ -542,6 +545,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */,
+				0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 				01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */,
 			);

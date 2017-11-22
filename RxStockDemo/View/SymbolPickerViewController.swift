@@ -49,8 +49,8 @@ class SymbolPickerViewController: UIViewController {
             .disposed(by: bag)
         
         tableView.rx.itemSelected
-            .subscribe(onNext: { [weak self] indexPath in
-                if let cell = self?.tableView.cellForRow(at: indexPath) {
+            .subscribe(onNext: { [unowned self] indexPath in
+                if let cell = self.tableView.cellForRow(at: indexPath) {
                     let realm = try! Realm()
                     
                     try! realm.write {
@@ -60,7 +60,7 @@ class SymbolPickerViewController: UIViewController {
                         realm.add(stockPortfolio, update: true)
                     }
                     
-                    self?.navigationController?.popViewController(animated: true)
+                    self.navigationController?.popViewController(animated: true)
                 }
             })
         .disposed(by: bag)
