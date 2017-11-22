@@ -22,6 +22,7 @@ enum QueryInterval: String {
     case fifteenMins = "15min"
     case thirtyMins = "30min"
     case sixtyMins = "60min"
+    case daily = "Daily"
 }
 
 struct TimeSeriesIntraday: Codable {
@@ -52,7 +53,7 @@ struct Price {
 }
 
 protocol StocksApiProtocol {
-    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?>
+    func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?>
 }
 
 final class StocksApi: StocksApiProtocol {
@@ -62,65 +63,9 @@ final class StocksApi: StocksApiProtocol {
     
     private init() {}
     
-    func parseIntraDayHistoryDataToRealm(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
-        return intraDayHistoryQuery(symbol: symbol, interval: interval)
-            .do(onNext: { stocks in
-                _ = stocks.map({ stock in
-                    let realm = try! Realm()
-                    try! realm.write {
-                        let stockPrice = StockPrice()
-                        stockPrice.symbol = symbol
-                        stockPrice.date = stock.dateTime.toDate!
-                        stockPrice.open = stock.price.open
-                        stockPrice.high = stock.price.high
-                        stockPrice.low = stock.price.low
-                        stockPrice.close = stock.price.close
-                        stockPrice.volume = stock.price.volume
-                        
-                        realm.add(stockPrice, update: true)
-                    }
-                })
-            })
-    }
-    
-    func intraDayHistoryQuery(symbol: String, interval: QueryInterval) -> Observable<[Stock]> {
-        let params = ["function": "TIME_SERIES_INTRADAY",
-                      "symbol": symbol,
-                      "outputsize": "compact",
-                      "interval": interval.rawValue,
-                      "apikey": getRandomKey()]
-        
-        return requestJSON(try! urlRequest(.get, url, parameters: params))
-            .flatMap { arg -> Observable<[Stock]> in
-                guard arg.0.statusCode == 200 else {
-                    throw RxAlamofireUnknownError
-                }
-                
-                if let json = arg.1 as? [String: Any],
-                    let price = json["Time Series (\(interval.rawValue))"] as? [String: Any] {
-                    let stocks = price.map { arg -> Stock in
-                        let value = arg.value as! [String: String]
-                        let open = value["1. open"]!.toDouble
-                        let high = value["2. high"]!.toDouble
-                        let low = value["3. low"]!.toDouble
-                        let close = value["4. close"]!.toDouble
-                        let volume = value["5. volume"]!.toInt
-                        
-                        let price = Price(open: open, high: high, low: low, close: close, volume: volume)
-                        let stock = Stock(symbol: symbol, dateTime: arg.key, price: price)
-                        
-                        return stock
-                    }
-                    
-                    return Observable.of(stocks)
-                } else {
-                    throw RxAlamofireUnknownError
-                }
-        }
-    }
-    
-    func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
-        let params = ["function": "TIME_SERIES_INTRADAY",
+    func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
+        let functionName = interval == .daily ? "TIME_SERIES_DAILY" : "TIME_SERIES_INTRADAY"
+        let params = ["function": functionName,
                       "symbol": symbol,
                       "outputsize": "compact",
                       "interval": interval.rawValue,

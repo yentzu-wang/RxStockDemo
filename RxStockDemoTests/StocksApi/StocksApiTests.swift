@@ -62,8 +62,8 @@ class StocksApiTests: XCTestCase {
         expect(erroredCorrectly) == true
     }
     
-    func testIntraDayNewestQuery() {
-        let stock = sut.intraDayNewestQuery(symbol: "foo", interval: .fiveMins)
+    func testStockPriceQuery() {
+        let stock = sut.stockPriceQuery(symbol: "foo", interval: .fiveMins)
             .toBlocking()
             .firstOrNil()!
         
@@ -73,7 +73,7 @@ class StocksApiTests: XCTestCase {
 
 extension StocksApiTests {
     class MockStocksApi: StocksApiProtocol {
-        func intraDayNewestQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
+        func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
             let stockPrice = StockPrice()
             stockPrice.symbol = "foo"
             return Observable.just(stockPrice)

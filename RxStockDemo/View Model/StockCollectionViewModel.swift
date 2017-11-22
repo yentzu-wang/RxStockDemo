@@ -29,7 +29,7 @@ class StockCollectionViewModel {
             .startWith(-1)
             .share()
             .subscribe { [unowned self] _ in
-                StocksApi.shared.intraDayNewestQuery(symbol: symbol, interval: interval)
+                StocksApi.shared.stockPriceQuery(symbol: symbol, interval: interval)
                     .asDriver(onErrorJustReturn: nil)
                     .asObservable()
                     .subscribe(onNext: { stockPrice in
