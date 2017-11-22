@@ -25,12 +25,25 @@ class StockCollectionViewController: UIViewController {
         viewModel = StockCollectionViewModel()
 //        foo.fetchStockPortfolio()
         
-        viewModel.subscriptNewestPrice(symbol: "CAT", interval: QueryInterval.oneMin)
-        .asObservable()
-            .subscribe(onNext: { (price) in
-                print(price)
-            })
-        .disposed(by: bag)
+//        viewModel.subscriptNewestPrice(symbol: "CAT", interval: QueryInterval.oneMin)
+//        .asObservable()
+//            .subscribe(onNext: { (price) in
+//                print(price)
+//            })
+//        .disposed(by: bag)
+        
+        
+        let foo = viewModel.subscription
+        
+        _ = foo.map {
+            $0.asObservable()
+                .subscribe(onNext: { (stockPrice) in
+                    print(stockPrice)
+                })
+                .disposed(by: bag)
+        }
+        
+        
         
         bindUI()
         

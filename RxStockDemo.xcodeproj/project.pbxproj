@@ -158,8 +158,8 @@
 		014246CD1FBEB13A0041FD63 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
-				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
 				0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */,
+				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -167,9 +167,9 @@
 		014B63A61FB9BA8400F19483 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
-				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
+				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
+				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -203,8 +203,8 @@
 		018E846A1FBCA5F3008C34CC /* View */ = {
 			isa = PBXGroup;
 			children = (
-				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
+				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
 			);
 			path = View;

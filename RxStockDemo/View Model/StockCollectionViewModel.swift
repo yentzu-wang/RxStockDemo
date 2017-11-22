@@ -12,6 +12,11 @@ import RealmSwift
 
 class StockCollectionViewModel {
     private let bag = DisposeBag()
+    var subscription: [Variable<StockPrice?>] = []
+    
+    init() {
+        fetchStockPortfolio()
+    }
     
     func subscriptNewestPrice(symbol: String, interval: QueryInterval) -> Variable<StockPrice?> {
         var price: StockPrice? = nil
@@ -20,6 +25,7 @@ class StockCollectionViewModel {
         
         timer
             .startWith(-1)
+            .share()
             .subscribe { [unowned self] _ in
                 StocksApi.shared.intraDayNewestQuery(symbol: symbol, interval: interval)
                     .asDriver(onErrorJustReturn: price)
@@ -39,11 +45,8 @@ class StockCollectionViewModel {
         let realm = try! Realm()
         let stockPortfolio = realm.objects(StockPortfolio.self).sorted(byKeyPath: "symbol", ascending: true)
         
-        var stocks: [String] = []
-        
         for stock in stockPortfolio {
-            stocks.append(stock.symbol)
+            subscription.append(subscriptNewestPrice(symbol: stock.symbol, interval: .oneMin))
         }
-        
     }
 }

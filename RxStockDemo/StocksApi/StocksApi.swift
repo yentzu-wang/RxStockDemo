@@ -135,6 +135,11 @@ final class StocksApi: StocksApiProtocol {
                 if let json = arg.1 as? [String: Any], let price = json["Time Series (\(interval.rawValue))"] as? [String: Any] {
                     let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "InMemoryRealm"))
                     
+                    let previousPrices = realm.objects(StockPrice.self).filter("symbol = %@", symbol)
+                    try! realm.write {
+                        realm.delete(previousPrices)
+                    }
+                    
                     for keyValuePair in price {
                         if let values = keyValuePair.value as? [String: String],
                             let open = values["1. open"],
