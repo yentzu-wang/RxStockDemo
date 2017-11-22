@@ -63,9 +63,12 @@ final class StocksApi: StocksApiProtocol {
     
     private init() {}
     
+    
     func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
         let functionName = interval == .daily ? "TIME_SERIES_DAILY" : "TIME_SERIES_INTRADAY"
-        let params = ["function": functionName,
+        let params = interval == .daily ? ["function": functionName,
+                                           "symbol": symbol,
+                                           "apikey": getRandomKey()] : ["function": functionName,
                       "symbol": symbol,
                       "outputsize": "compact",
                       "interval": interval.rawValue,
@@ -95,7 +98,7 @@ final class StocksApi: StocksApiProtocol {
                             
                             let stockPrice = StockPrice()
                             stockPrice.symbol = symbol
-                            stockPrice.date = keyValuePair.key.toDate!
+                            stockPrice.date = interval == .daily ? keyValuePair.key.toShortDate! : keyValuePair.key.toDate!    
                             stockPrice.open = open.toDouble
                             stockPrice.high = high.toDouble
                             stockPrice.low = low.toDouble
@@ -108,7 +111,7 @@ final class StocksApi: StocksApiProtocol {
                         }
                     }
                     
-                    let price = realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first
+                    let price = interval == .daily ? realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false)[1] : realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first
                     
                     return Observable.just(price)
                 } else {

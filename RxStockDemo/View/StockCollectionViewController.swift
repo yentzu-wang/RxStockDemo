@@ -21,8 +21,10 @@ class StockCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         viewModel = StockCollectionViewModel()
+        viewModel.updateLastTradeDayClose()
+        
         bindUI()
     }
     
@@ -30,6 +32,8 @@ class StockCollectionViewController: UIViewController {
         super.viewDidAppear(animated)
         
         viewModel = StockCollectionViewModel()
+        viewModel.updateLastTradeDayClose()
+        
         bindCollectionView()
     }
     
@@ -49,6 +53,40 @@ class StockCollectionViewController: UIViewController {
     
     private func bindCollectionView() {
         let dataSource = RxCollectionViewRealmDataSource<StockSubscription>(cellIdentifier: "Stock", cellType: StockCollectionViewCell.self) { (cell, indexPath, stockPrice) in
+            let realm = try! Realm()
+            let stockPortfolio = realm.objects(StockPortfolio.self).filter("symbol = %@", stockPrice.symbol).first!
+            if let lastTradeDayClose = stockPortfolio.lastTradeDayClose.value {
+                if stockPrice.close > lastTradeDayClose {
+                    cell.view.layer.borderColor = UIColor.red.cgColor
+                    cell.priceLabel.textColor = .red
+                    cell.priceChangeLabel.textColor = .red
+                    cell.priceChangeLabel.text = String(floor(abs(stockPrice.close - lastTradeDayClose) * 100) / 100)
+                    cell.changePercentageLabel.text = String(floor(abs((stockPrice.close - lastTradeDayClose) / lastTradeDayClose) * 100 * 100) / 100) + "%"
+                    cell.changePercentageLabel.textColor = .red
+                    cell.updownImage.image = #imageLiteral(resourceName: "up")
+                } else if stockPrice.close < lastTradeDayClose {
+                    cell.view.layer.borderColor = UIColor.green.cgColor
+                    cell.priceLabel.textColor = .green
+                    cell.priceChangeLabel.textColor = .green
+                    cell.priceChangeLabel.text = String(floor(abs(stockPrice.close - lastTradeDayClose) * 100) / 100)
+                    cell.changePercentageLabel.text = String(floor(abs((stockPrice.close - lastTradeDayClose) / lastTradeDayClose) * 100 * 100) / 100) + "%"
+                    cell.changePercentageLabel.textColor = .green
+                    cell.updownImage.image = #imageLiteral(resourceName: "down")
+                } else {
+                    cell.view.layer.borderColor = UIColor.white.cgColor
+                    cell.priceLabel.textColor = .white
+                    cell.priceChangeLabel.textColor = .white
+                    cell.changePercentageLabel.textColor = .white
+                    cell.updownImage.image = nil
+                }
+            } else {
+                cell.view.layer.borderColor = UIColor.white.cgColor
+                cell.priceLabel.textColor = .white
+                cell.priceChangeLabel.textColor = .white
+                cell.changePercentageLabel.textColor = .white
+                cell.updownImage.image = nil
+            }
+            
             cell.symbolLabel.text = stockPrice.symbol
             cell.priceLabel.text = String(stockPrice.close)
         }

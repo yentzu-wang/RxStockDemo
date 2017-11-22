@@ -15,6 +15,7 @@ protocol SymbolPickerProtocol {
 }
 
 class SymbolPickerViewModel: SymbolPickerProtocol {
+    private let bag = DisposeBag()
     var symbols: Results<StockSymbol>
     
     init() {

@@ -25,4 +25,13 @@ extension String {
         
         return date
     }
+    
+    var toShortDate: Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(abbreviation: "EST")
+        let date = dateFormatter.date(from: self)
+        
+        return date
+    }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import Realm
 import RealmSwift
 
 class StockCollectionViewModel {
@@ -22,8 +23,29 @@ class StockCollectionViewModel {
         fetchStockPortfolio()
     }
     
+    func updateLastTradeDayClose() {
+        for stock in subscription {
+            StocksApi.shared.stockPriceQuery(symbol: stock.symbol, interval: .daily)
+                .asDriver(onErrorJustReturn: nil)
+                .asObservable()
+                .subscribe(onNext: { (stockPrice) in
+                    if let stockPrice = stockPrice {
+                        let realm = try! Realm()
+                        try! realm.write {
+                            let stockPortfolio = StockPortfolio()
+                            stockPortfolio.symbol = stockPrice.symbol
+                            stockPortfolio.lastTradeDayClose.value = stockPrice.close
+                            
+                            realm.add(stockPortfolio, update: true)
+                        }
+                    }
+                })
+                .disposed(by: bag)
+        }
+    }
+    
     private func subscriptNewestPrice(symbol: String, interval: QueryInterval) {
-        let timer = Observable<Int>.interval(5, scheduler: MainScheduler.instance)
+        let timer = Observable<Int>.interval(25, scheduler: MainScheduler.instance)
         
         timer
             .startWith(-1)
@@ -32,7 +54,7 @@ class StockCollectionViewModel {
                 StocksApi.shared.stockPriceQuery(symbol: symbol, interval: interval)
                     .asDriver(onErrorJustReturn: nil)
                     .asObservable()
-                    .subscribe(onNext: { stockPrice in
+                    .subscribe(onNext: { [unowned self] stockPrice in
                         if let stockPrice = stockPrice {
                             let realm = try! Realm()
                             
@@ -47,6 +69,11 @@ class StockCollectionViewModel {
                             
                             try! realm.write {
                                 realm.add(subscription, update: true)
+                            }
+                            
+                            let portfolio = realm.objects(StockPortfolio.self).filter("lastTradeDayClose = nil")
+                            if portfolio.count > 0 {
+                                self.updateLastTradeDayClose()
                             }
                         }
                     })
