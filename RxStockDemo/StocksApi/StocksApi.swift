@@ -162,6 +162,7 @@ final class StocksApi: StocksApiProtocol {
                             }
                         }
                     }
+                    
                     let price = realm.objects(StockPrice.self).sorted(byKeyPath: "date", ascending: false).first
                     
                     return Observable.just(price)
