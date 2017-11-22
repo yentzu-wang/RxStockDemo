@@ -21,16 +21,24 @@ class StockCollectionViewModel {
     
     init() {
         fetchStockPortfolio()
+        
+        let realm = try! Realm()
+        let portfolio = realm.objects(StockPortfolio.self)
+        
+        if portfolio.count > 0 {
+            self.updateLastTradeDayClose(stockCollection: portfolio)
+        }
     }
     
-    func updateLastTradeDayClose() {
-        for stock in subscription {
+    func updateLastTradeDayClose(stockCollection: Results<StockPortfolio>) {
+        for stock in stockCollection {
             StocksApi.shared.stockPriceQuery(symbol: stock.symbol, interval: .daily)
                 .asDriver(onErrorJustReturn: nil)
                 .asObservable()
                 .subscribe(onNext: { (stockPrice) in
                     if let stockPrice = stockPrice {
                         let realm = try! Realm()
+                        
                         try! realm.write {
                             let stockPortfolio = StockPortfolio()
                             stockPortfolio.symbol = stockPrice.symbol
@@ -45,7 +53,7 @@ class StockCollectionViewModel {
     }
     
     private func subscriptNewestPrice(symbol: String, interval: QueryInterval) {
-        let timer = Observable<Int>.interval(25, scheduler: MainScheduler.instance)
+        let timer = Observable<Int>.interval(15, scheduler: MainScheduler.instance)
         
         timer
             .startWith(-1)
@@ -72,8 +80,9 @@ class StockCollectionViewModel {
                             }
                             
                             let portfolio = realm.objects(StockPortfolio.self).filter("lastTradeDayClose = nil")
+                            
                             if portfolio.count > 0 {
-                                self.updateLastTradeDayClose()
+                                self.updateLastTradeDayClose(stockCollection: portfolio)
                             }
                         }
                     })

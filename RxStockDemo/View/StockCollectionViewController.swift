@@ -23,7 +23,6 @@ class StockCollectionViewController: UIViewController {
         super.viewDidLoad()
                 
         viewModel = StockCollectionViewModel()
-        viewModel.updateLastTradeDayClose()
         
         bindUI()
     }
@@ -32,7 +31,6 @@ class StockCollectionViewController: UIViewController {
         super.viewDidAppear(animated)
         
         viewModel = StockCollectionViewModel()
-        viewModel.updateLastTradeDayClose()
         
         bindCollectionView()
     }
