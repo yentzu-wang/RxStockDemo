@@ -12,15 +12,17 @@ import RealmSwift
 
 class StockCollectionViewModel {
     private let bag = DisposeBag()
-    var subscription: [Variable<StockPrice?>] = []
+    let subscription: Results<StockSubscription> = {
+        let realm = try! Realm()
+        return realm.objects(StockSubscription.self)
+            .sorted(byKeyPath: "symbol", ascending: true)
+    }()
     
     init() {
         fetchStockPortfolio()
     }
     
-    func subscriptNewestPrice(symbol: String, interval: QueryInterval) -> Variable<StockPrice?> {
-        var price: StockPrice? = nil
-        let variable = Variable(price)
+    private func subscriptNewestPrice(symbol: String, interval: QueryInterval) {
         let timer = Observable<Int>.interval(5, scheduler: MainScheduler.instance)
         
         timer
@@ -28,25 +30,37 @@ class StockCollectionViewModel {
             .share()
             .subscribe { [unowned self] _ in
                 StocksApi.shared.intraDayNewestQuery(symbol: symbol, interval: interval)
-                    .asDriver(onErrorJustReturn: price)
+                    .asDriver(onErrorJustReturn: nil)
                     .asObservable()
                     .subscribe(onNext: { stockPrice in
-                        price = stockPrice
-                        variable.value = stockPrice
+                        if let stockPrice = stockPrice {
+                            let realm = try! Realm()
+                            
+                            let subscription = StockSubscription()
+                            subscription.symbol = stockPrice.symbol
+                            subscription.date = stockPrice.date
+                            subscription.open = stockPrice.open
+                            subscription.high = stockPrice.high
+                            subscription.low = stockPrice.low
+                            subscription.close = stockPrice.close
+                            subscription.volume = stockPrice.volume
+                            
+                            try! realm.write {
+                                realm.add(subscription, update: true)
+                            }
+                        }
                     })
                     .disposed(by: self.bag)
             }
             .disposed(by: bag)
-        
-        return variable
     }
     
-    func fetchStockPortfolio() {
+    private func fetchStockPortfolio() {
         let realm = try! Realm()
         let stockPortfolio = realm.objects(StockPortfolio.self).sorted(byKeyPath: "symbol", ascending: true)
         
         for stock in stockPortfolio {
-            subscription.append(subscriptNewestPrice(symbol: stock.symbol, interval: .oneMin))
+            subscriptNewestPrice(symbol: stock.symbol, interval: .oneMin)
         }
     }
 }

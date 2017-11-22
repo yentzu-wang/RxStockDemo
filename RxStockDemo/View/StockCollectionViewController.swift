@@ -18,54 +18,28 @@ class StockCollectionViewController: UIViewController {
     
     private let bag = DisposeBag()
     private var viewModel: StockCollectionViewModel!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel = StockCollectionViewModel()
-//        foo.fetchStockPortfolio()
-        
-//        viewModel.subscriptNewestPrice(symbol: "CAT", interval: QueryInterval.oneMin)
-//        .asObservable()
-//            .subscribe(onNext: { (price) in
-//                print(price)
-//            })
-//        .disposed(by: bag)
-        
-        
-        let foo = viewModel.subscription
-        
-        _ = foo.map {
-            $0.asObservable()
-                .subscribe(onNext: { (stockPrice) in
-                    print(stockPrice)
-                })
-                .disposed(by: bag)
-        }
-        
-        
-        
         bindUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
+        viewModel = StockCollectionViewModel()
+        bindCollectionView()
     }
     
     private func bindUI() {
         collectionView.rx.setDelegate(self)
             .disposed(by: bag)
         
-        
-        
-        //        let items = StocksApi.shared.intraDayHistoryQuery(symbol: "CAT", interval: .fiveMins)
-        //
-        //        items.bind(to: collectionView.rx.items) { (collectionView, row, element) in
-        //            let indexPath = IndexPath(row: row, section: 0)
-        //            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Stock", for: indexPath)
-        //            return cell
-        //        }
-        //        .disposed(by: bag)
+        bindCollectionView()
         
         let addButton = navigationItem.rightBarButtonItem
-        
         addButton?.rx.tap
             .subscribe(onNext: {
                 self.performSegue(withIdentifier: "ToStockPicker", sender: nil)
@@ -74,9 +48,15 @@ class StockCollectionViewController: UIViewController {
     }
     
     private func bindCollectionView() {
-        let dataSource = RxCollectionViewRealmDataSource<StockPortfolio>(cellIdentifier: "Stock", cellType: StockCollectionViewCell.self) { (cell, indexPath, portfolio) in
-            
+        let dataSource = RxCollectionViewRealmDataSource<StockSubscription>(cellIdentifier: "Stock", cellType: StockCollectionViewCell.self) { (cell, indexPath, stockPrice) in
+            cell.symbolLabel.text = stockPrice.symbol
+            cell.priceLabel.text = String(stockPrice.close)
         }
+        
+        let items = Observable.changeset(from: viewModel.subscription)
+        items
+            .bind(to: collectionView.rx.realmChanges(dataSource))
+            .disposed(by: bag)
     }
 }
 

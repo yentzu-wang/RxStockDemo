@@ -8,7 +8,6 @@ target 'RxStockDemo' do
 def my_pods
   pod 'RxSwift', '~> 4.0'
   pod 'RxCocoa', '~> 4.0'
-  pod 'RxDataSources'
   pod 'Realm'
   pod 'RxRealm'
   pod 'RxRealmDataSources'
