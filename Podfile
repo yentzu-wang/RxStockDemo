@@ -21,7 +21,7 @@ end
   pod 'DZNEmptyDataSet'
 
   target 'RxStockDemoTests' do
-    inherit! :search_paths
+      #inherit! :search_paths
     my_pods
     pod 'RxNimble'
     pod 'RxBlocking'
