@@ -11,7 +11,12 @@ import RxSwift
 import Realm
 import RealmSwift
 
-class StockCollectionViewModel {
+protocol StockCollectionViewModelProtocol {
+    var subscription: Results<StockSubscription> { get }
+    func updateLastTradeDayClose(stockCollection: Results<StockPortfolio>)
+}
+
+class StockCollectionViewModel: StockCollectionViewModelProtocol {
     private let bag = DisposeBag()
     let subscription: Results<StockSubscription> = {
         let realm = try! Realm()
@@ -26,7 +31,7 @@ class StockCollectionViewModel {
         let portfolio = realm.objects(StockPortfolio.self)
         
         if portfolio.count > 0 {
-            self.updateLastTradeDayClose(stockCollection: portfolio)
+            updateLastTradeDayClose(stockCollection: portfolio)
         }
     }
     

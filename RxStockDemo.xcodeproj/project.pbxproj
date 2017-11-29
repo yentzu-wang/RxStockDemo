@@ -180,8 +180,8 @@
 		014FBA351FC195680046B9FE /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
 				0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */,
+				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
