@@ -13,6 +13,7 @@ def my_pods
   pod 'RxRealmDataSources'
   pod 'Alamofire'
   pod 'RxAlamofire'
+  pod 'Charts'
 end
 
   # Pods for RxStockDemo

@@ -24,7 +24,13 @@ class StockCollectionViewModelTests: XCTestCase {
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        let realm = try! Realm()
+        let foo = realm.objects(StockPortfolio.self)
+            .filter("symbol = 'foo'")
+        try! realm.write {
+            realm.delete(foo)
+        }
+        
         super.tearDown()
     }
     

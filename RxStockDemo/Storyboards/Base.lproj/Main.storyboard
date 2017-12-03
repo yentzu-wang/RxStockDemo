@@ -19,6 +19,36 @@
         </array>
     </customFonts>
     <scenes>
+        <!--Chart View Controller-->
+        <scene sceneID="Rg3-k9-XMY">
+            <objects>
+                <viewController id="sgz-5E-nhF" customClass="ChartViewController" customModule="RxStockDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W9C-Fh-DvM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yGz-DL-I0U" customClass="CandleStickChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="yGz-DL-I0U" firstAttribute="trailing" secondItem="Ngb-gB-T9H" secondAttribute="trailing" id="6ro-6i-60j"/>
+                            <constraint firstItem="yGz-DL-I0U" firstAttribute="leading" secondItem="Ngb-gB-T9H" secondAttribute="leading" id="NDT-Ae-RLx"/>
+                            <constraint firstItem="yGz-DL-I0U" firstAttribute="top" secondItem="Ngb-gB-T9H" secondAttribute="top" id="jB2-OF-vux"/>
+                            <constraint firstAttribute="bottom" secondItem="yGz-DL-I0U" secondAttribute="bottom" id="ptR-k7-kx9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ngb-gB-T9H"/>
+                    </view>
+                    <connections>
+                        <outlet property="chartView" destination="yGz-DL-I0U" id="7PX-Zm-sF1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NlU-HE-y5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1508" y="1630.4347826086957"/>
+        </scene>
         <!-- -->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -150,6 +180,7 @@
                     <connections>
                         <outlet property="collectionView" destination="yPf-Xu-zCt" id="u6x-Xp-BkS"/>
                         <segue destination="xDO-I1-ZxX" kind="show" identifier="ToStockPicker" id="vqn-8e-ew8"/>
+                        <segue destination="sgz-5E-nhF" kind="show" identifier="ToChart" id="wzM-5y-Heg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

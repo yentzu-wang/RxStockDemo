@@ -28,6 +28,8 @@
 		01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A59B1FB4535C006399CA /* StocksApiTests.swift */; };
 		01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5A21FB4B312006399CA /* ApiKeys.swift */; };
 		01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5A41FB4CE47006399CA /* String+Extension.swift */; };
+		01D46B421FD3F5A000BE4AB6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */; };
+		01D46B441FD40C9400BE4AB6 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */; };
 		32180E5C3E78F95415D6DF1C /* Pods_RxStockDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */; };
 		596ABFECAE8D52466394E560 /* Pods_RxStockDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE633173BED12E1D769A5740 /* Pods_RxStockDemoTests.framework */; };
 		F2535E2217CED12235665F63 /* Pods_RxStockDemo_RxStockDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8999AC3EE4C76AEE94139F7 /* Pods_RxStockDemo_RxStockDemoTests.framework */; };
@@ -69,6 +71,8 @@
 		01A2A59B1FB4535C006399CA /* StocksApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApiTests.swift; sourceTree = "<group>"; };
 		01A2A5A21FB4B312006399CA /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		01A2A5A41FB4CE47006399CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
+		01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo-RxStockDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests.release.xcconfig"; sourceTree = "<group>"; };
 		4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxStockDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +166,7 @@
 			children = (
 				0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */,
 				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
+				01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
 				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
+				01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,6 +421,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -432,6 +439,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -492,6 +500,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -505,6 +514,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -540,7 +550,9 @@
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
 				0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */,
 				014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */,
+				01D46B441FD40C9400BE4AB6 /* ChartViewModel.swift in Sources */,
 				010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */,
+				01D46B421FD3F5A000BE4AB6 /* ChartViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
