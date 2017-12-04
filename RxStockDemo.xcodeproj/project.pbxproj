@@ -10,6 +10,7 @@
 		0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0106CBD11FC542D5006883E3 /* StockSubscription.swift */; };
 		010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF4F1FBBFC4000516DBB /* StockPrice.swift */; };
 		010EDF521FBC336B00516DBB /* StockPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 010EDF511FBC336B00516DBB /* StockPortfolio.swift */; };
+		0116715A1FD4150E000732A9 /* ChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011671591FD4150E000732A9 /* ChartViewModelTests.swift */; };
 		011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */; };
 		011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F06681FB421B100F681B5 /* SandPApiTests.swift */; };
 		01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB01FB14DE2000FDD5E /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		0106CBD11FC542D5006883E3 /* StockSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSubscription.swift; sourceTree = "<group>"; };
 		010EDF4F1FBBFC4000516DBB /* StockPrice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPrice.swift; sourceTree = "<group>"; };
 		010EDF511FBC336B00516DBB /* StockPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockPortfolio.swift; sourceTree = "<group>"; };
+		011671591FD4150E000732A9 /* ChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelTests.swift; sourceTree = "<group>"; };
 		011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
 		011F06681FB421B100F681B5 /* SandPApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApiTests.swift; sourceTree = "<group>"; };
 		01349BAD1FB14DE2000FDD5E /* RxStockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -187,6 +189,7 @@
 			children = (
 				0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */,
 				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
+				011671591FD4150E000732A9 /* ChartViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -421,7 +424,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -431,6 +433,7 @@
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
@@ -439,7 +442,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -449,6 +451,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
@@ -500,7 +503,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
@@ -510,11 +512,11 @@
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
@@ -524,6 +526,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -561,6 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */,
+				0116715A1FD4150E000732A9 /* ChartViewModelTests.swift in Sources */,
 				0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
 				01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */,

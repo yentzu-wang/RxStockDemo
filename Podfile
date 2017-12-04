@@ -13,21 +13,20 @@ def my_pods
   pod 'RxRealmDataSources'
   pod 'Alamofire'
   pod 'RxAlamofire'
-  pod 'Charts'
 end
 
   # Pods for RxStockDemo
   my_pods
   pod 'RAMAnimatedTabBarController'
   pod 'DZNEmptyDataSet'
+  pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
 
   target 'RxStockDemoTests' do
-      #inherit! :search_paths
+    #inherit! :search_paths
     my_pods
     pod 'RxNimble'
     pod 'RxBlocking'
     pod 'OHHTTPStubs'
     pod 'OHHTTPStubs/Swift'
   end
-
 end
