@@ -20,6 +20,7 @@ end
   pod 'RAMAnimatedTabBarController'
   pod 'DZNEmptyDataSet'
   pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
+  pod 'PKHUD'
 
   target 'RxStockDemoTests' do
     #inherit! :search_paths

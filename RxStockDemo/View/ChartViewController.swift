@@ -10,6 +10,7 @@ import UIKit
 import SwiftCharts
 import RxSwift
 import RxCocoa
+import PKHUD
 
 class ChartViewController: UIViewController {
     @IBOutlet weak var chartView: UIView!
@@ -21,6 +22,8 @@ class ChartViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        HUD.show(.progress)
         
         viewModel = ChartViewModel(symbol: symbol)
         bindUI()
@@ -49,6 +52,9 @@ class ChartViewController: UIViewController {
                     
                     self?.bindChart(chartPoints: chartPoints, displayFormatter: displayFormatter, highest: highest, lowest: lowest)
                 }
+                }, onError: { (error) in
+                    HUD.hide()
+                    print(error.localizedDescription)
             })
             .disposed(by: bag)
     }
@@ -94,6 +100,8 @@ class ChartViewController: UIViewController {
         
         chartView.addSubview(chart.view)
         self.chart = chart
+        
+        HUD.hide()
     }
 }
 
