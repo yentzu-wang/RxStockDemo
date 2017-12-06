@@ -21,7 +21,7 @@ class StockCollectionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         viewModel = StockCollectionViewModel()
         
         bindUI()
@@ -35,6 +35,12 @@ class StockCollectionViewController: UIViewController {
         bindCollectionView()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToChart", let symbol = sender as? String, let destination = segue.destination as? ChartViewController {
+            destination.symbol = symbol
+        }
+    }
+    
     private func bindUI() {
         collectionView.rx.setDelegate(self)
             .disposed(by: bag)
@@ -43,8 +49,16 @@ class StockCollectionViewController: UIViewController {
         
         let addButton = navigationItem.rightBarButtonItem
         addButton?.rx.tap
-            .subscribe(onNext: {
-                self.performSegue(withIdentifier: "ToStockPicker", sender: nil)
+            .subscribe(onNext: { [weak self] in
+                self?.performSegue(withIdentifier: "ToStockPicker", sender: nil)
+            })
+            .disposed(by: bag)
+        
+        collectionView.rx.itemSelected
+            .subscribe(onNext: { [weak self] indexPath in
+                if let cell = self?.collectionView.cellForItem(at: indexPath) as? StockCollectionViewCell, let symbol = cell.symbolLabel.text {
+                    self?.performSegue(withIdentifier: "ToChart", sender: symbol)
+                }
             })
             .disposed(by: bag)
     }

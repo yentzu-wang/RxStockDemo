@@ -81,7 +81,7 @@ final class StocksApi: StocksApiProtocol {
                 }
                 
                 if let json = arg.1 as? [String: Any], let price = json["Time Series (\(interval.rawValue))"] as? [String: Any] {
-                    let realm = try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "InMemoryRealm"))
+                    let realm =  interval == .daily ? try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "InMemoryRealmDaily")) : try! Realm(configuration: Realm.Configuration(inMemoryIdentifier: "InMemoryRealm"))
                     
                     let previousPrices = realm.objects(StockPrice.self).filter("symbol = %@", symbol)
                     try! realm.write {

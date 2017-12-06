@@ -19,14 +19,15 @@ end
   my_pods
   pod 'RAMAnimatedTabBarController'
   pod 'DZNEmptyDataSet'
+  pod 'SwiftCharts', :git => 'https://github.com/i-schuetz/SwiftCharts.git'
+  pod 'PKHUD'
 
   target 'RxStockDemoTests' do
-      #inherit! :search_paths
+    #inherit! :search_paths
     my_pods
     pod 'RxNimble'
     pod 'RxBlocking'
     pod 'OHHTTPStubs'
     pod 'OHHTTPStubs/Swift'
   end
-
 end
