@@ -259,21 +259,46 @@
             </objects>
             <point key="canvasLocation" x="-692" y="2399.5502248875564"/>
         </scene>
-        <!--View Controller-->
+        <!--Sector View Controller-->
         <scene sceneID="xgS-z3-GAk">
             <objects>
-                <viewController id="MxB-Gg-ehg" sceneMemberID="viewController">
+                <viewController id="MxB-Gg-ehg" customClass="SectorViewController" customModule="RxStockDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Oup-68-VJq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nyC-tP-66L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectorCell" id="C4a-aA-Pq1">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="C4a-aA-Pq1" id="YVE-1J-EJK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="nyC-tP-66L" firstAttribute="leading" secondItem="6Y2-Oj-q96" secondAttribute="leading" id="IZy-Ou-yWs"/>
+                            <constraint firstItem="nyC-tP-66L" firstAttribute="trailing" secondItem="6Y2-Oj-q96" secondAttribute="trailing" id="NNN-vE-WcM"/>
+                            <constraint firstItem="nyC-tP-66L" firstAttribute="top" secondItem="Oup-68-VJq" secondAttribute="top" id="hZQ-8M-7vA"/>
+                            <constraint firstItem="nyC-tP-66L" firstAttribute="bottom" secondItem="6Y2-Oj-q96" secondAttribute="bottom" id="npF-M1-5i1"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Y2-Oj-q96"/>
                     </view>
                     <navigationItem key="navigationItem" id="LVD-3y-77P"/>
+                    <connections>
+                        <outlet property="tableView" destination="nyC-tP-66L" id="QWm-bj-DcX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j5f-0i-UZo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="244" y="1632"/>
+            <point key="canvasLocation" x="244" y="1631.3343328335834"/>
         </scene>
         <!--Animated Tab Bar Controller-->
         <scene sceneID="8NC-rJ-cTi">

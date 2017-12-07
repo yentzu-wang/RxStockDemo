@@ -13,6 +13,8 @@
 		0116715A1FD4150E000732A9 /* ChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011671591FD4150E000732A9 /* ChartViewModelTests.swift */; };
 		011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */; };
 		011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F06681FB421B100F681B5 /* SandPApiTests.swift */; };
+		011FF23E1FD8109400926F95 /* SectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FF23D1FD8109400926F95 /* SectorViewController.swift */; };
+		011FF2401FD8D20E00926F95 /* SectorPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */; };
 		01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB01FB14DE2000FDD5E /* AppDelegate.swift */; };
 		01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */; };
 		01349BB61FB14DE2000FDD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB41FB14DE2000FDD5E /* Main.storyboard */; };
@@ -53,6 +55,8 @@
 		011671591FD4150E000732A9 /* ChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelTests.swift; sourceTree = "<group>"; };
 		011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
 		011F06681FB421B100F681B5 /* SandPApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApiTests.swift; sourceTree = "<group>"; };
+		011FF23D1FD8109400926F95 /* SectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorViewController.swift; sourceTree = "<group>"; };
+		011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorPerformance.swift; sourceTree = "<group>"; };
 		01349BAD1FB14DE2000FDD5E /* RxStockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BB01FB14DE2000FDD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewController.swift; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
+				011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */,
 				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
 				0106CBD11FC542D5006883E3 /* StockSubscription.swift */,
 				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
@@ -218,6 +223,7 @@
 				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
 				01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */,
+				011FF23D1FD8109400926F95 /* SectorViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 			files = (
 				014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */,
 				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
+				011FF2401FD8D20E00926F95 /* SectorPerformance.swift in Sources */,
 				01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */,
 				0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */,
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
@@ -553,6 +560,7 @@
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
 				011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */,
 				014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */,
+				011FF23E1FD8109400926F95 /* SectorViewController.swift in Sources */,
 				01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */,
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
 				0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */,
