@@ -72,6 +72,7 @@ enum PerformanceInterval: String {
 
 protocol StocksApiProtocol {
     func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?>
+    func sectorQuery() -> Observable<Results<SectorPerformance>>
 }
 
 final class StocksApi: StocksApiProtocol {

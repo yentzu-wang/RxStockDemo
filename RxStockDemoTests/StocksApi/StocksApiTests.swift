@@ -13,6 +13,7 @@ import RxBlocking
 import Nimble
 import RxNimble
 import OHHTTPStubs
+import RealmSwift
 @testable import RxStockDemo
 
 class StocksApiTests: XCTestCase {
@@ -69,10 +70,26 @@ class StocksApiTests: XCTestCase {
         
         expect(stock?.symbol) == "foo"
     }
+    
+    func testSectorQuery() {
+        let performance = sut.sectorQuery()
+        .toBlocking()
+        .firstOrNil()
+        
+        expect(performance).notTo(beNil())
+    }
 }
 
 extension StocksApiTests {
     class MockStocksApi: StocksApiProtocol {
+        func sectorQuery() -> Observable<Results<SectorPerformance>> {
+            let realm = try! Realm()
+            
+            let performance = realm.objects(SectorPerformance.self)
+            
+            return Observable.just(performance)
+        }
+        
         func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
             let stockPrice = StockPrice()
             stockPrice.symbol = "foo"
