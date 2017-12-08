@@ -52,8 +52,27 @@ struct Price {
     }
 }
 
+struct Performance {
+    let sector: String
+    let changePercentage: Double
+}
+
+enum PerformanceInterval: String {
+    case realTime = "Rank A: Real-Time Performance"
+    case oneDay = "Rank B: 1 Day Performance"
+    case fiveDay = "Rank C: 5 Day Performance"
+    case oneMonth = "Rank D: 1 Month Performance"
+    case fiveMonth = "Rank E: 3 Month Performance"
+    case yearToDate = "Rank F: Year-to-Date (YTD) Performance"
+    case oneYear = "Rank G: 1 Year Performance"
+    case threeYear = "Rank H: 3 Year Performance"
+    case fiveYear = "Rank I: 5 Year Performance"
+    case tenYear = "Rank J: 10 Year Performance"
+}
+
 protocol StocksApiProtocol {
     func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?>
+    func sectorQuery() -> Observable<Results<SectorPerformance>>
 }
 
 final class StocksApi: StocksApiProtocol {
@@ -63,16 +82,15 @@ final class StocksApi: StocksApiProtocol {
     
     private init() {}
     
-    
     func stockPriceQuery(symbol: String, interval: QueryInterval) -> Observable<StockPrice?> {
         let functionName = interval == .daily ? "TIME_SERIES_DAILY" : "TIME_SERIES_INTRADAY"
         let params = interval == .daily ? ["function": functionName,
                                            "symbol": symbol,
                                            "apikey": getRandomKey()] : ["function": functionName,
-                      "symbol": symbol,
-                      "outputsize": "compact",
-                      "interval": interval.rawValue,
-                      "apikey": getRandomKey()]
+                                                                        "symbol": symbol,
+                                                                        "outputsize": "compact",
+                                                                        "interval": interval.rawValue,
+                                                                        "apikey": getRandomKey()]
         
         return requestJSON(try! urlRequest(.get, url, parameters: params))
             .flatMap { (arg) -> Observable<StockPrice?> in
@@ -119,7 +137,39 @@ final class StocksApi: StocksApiProtocol {
                 }
         }
     }
-
+    
+    func sectorQuery() -> Observable<Results<SectorPerformance>> {
+        let params = ["function": "SECTOR", "apikey": getRandomKey()]
+        
+        return requestJSON(try! urlRequest(.get, url, parameters: params))
+            .flatMap({ (arg) -> Observable<Results<SectorPerformance>> in
+                guard arg.0.statusCode == 200 else {
+                    throw RxAlamofireUnknownError
+                }
+                
+                if let json = arg.1 as? [String: Any], let performance = json[PerformanceInterval.realTime.rawValue] as? [String: String] {
+                    let realm = try! Realm()
+                    
+                    for keyValuePair in performance {
+                        let sectorPerformance = SectorPerformance()
+                        sectorPerformance.sector = keyValuePair.key
+                        sectorPerformance.changePercentage = keyValuePair.value
+                        
+                        try! realm.write {
+                            realm.add(sectorPerformance, update: true)
+                        }
+                    }
+                    
+                    let performance = realm.objects(SectorPerformance.self)
+                        .sorted(byKeyPath: "sector", ascending: false)
+                    
+                    return Observable.just(performance)
+                } else {
+                    throw RxAlamofireUnknownError
+                }
+            })
+    }
+    
     private func getRandomKey() -> String {
         let randomIndex = GKRandomSource.sharedRandom().nextInt(upperBound: apiKeys.count)
         

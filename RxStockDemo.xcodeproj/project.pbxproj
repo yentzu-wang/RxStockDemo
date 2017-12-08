@@ -13,6 +13,8 @@
 		0116715A1FD4150E000732A9 /* ChartViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011671591FD4150E000732A9 /* ChartViewModelTests.swift */; };
 		011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */; };
 		011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011F06681FB421B100F681B5 /* SandPApiTests.swift */; };
+		011FF23E1FD8109400926F95 /* SectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FF23D1FD8109400926F95 /* SectorViewController.swift */; };
+		011FF2401FD8D20E00926F95 /* SectorPerformance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */; };
 		01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB01FB14DE2000FDD5E /* AppDelegate.swift */; };
 		01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */; };
 		01349BB61FB14DE2000FDD5E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01349BB41FB14DE2000FDD5E /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 		014246CC1FBEB1340041FD63 /* SymbolPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */; };
 		014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014B63A41FB9BA7C00F19483 /* StockSymbol.swift */; };
 		014FBA341FC195640046B9FE /* SymbolPickerViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */; };
+		017BD2E01FDA269D00AD61E6 /* SectorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017BD2DF1FDA269D00AD61E6 /* SectorViewModel.swift */; };
+		017BD2E21FDA3B8000AD61E6 /* SectorTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 017BD2E11FDA3B8000AD61E6 /* SectorTableViewCell.swift */; };
 		0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */; };
 		0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */; };
 		01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A20E451FB2FD0900B5A349 /* SandPApi.swift */; };
@@ -29,6 +33,7 @@
 		01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A59B1FB4535C006399CA /* StocksApiTests.swift */; };
 		01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5A21FB4B312006399CA /* ApiKeys.swift */; };
 		01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A2A5A41FB4CE47006399CA /* String+Extension.swift */; };
+		01A89BE41FDA6C44000AADD7 /* SectorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01A89BE31FDA6C44000AADD7 /* SectorViewModelTests.swift */; };
 		01D46B421FD3F5A000BE4AB6 /* ChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */; };
 		01D46B441FD40C9400BE4AB6 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */; };
 		32180E5C3E78F95415D6DF1C /* Pods_RxStockDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DC8E829CB4334160753F4A8 /* Pods_RxStockDemo.framework */; };
@@ -53,6 +58,8 @@
 		011671591FD4150E000732A9 /* ChartViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModelTests.swift; sourceTree = "<group>"; };
 		011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewCell.swift; sourceTree = "<group>"; };
 		011F06681FB421B100F681B5 /* SandPApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApiTests.swift; sourceTree = "<group>"; };
+		011FF23D1FD8109400926F95 /* SectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorViewController.swift; sourceTree = "<group>"; };
+		011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorPerformance.swift; sourceTree = "<group>"; };
 		01349BAD1FB14DE2000FDD5E /* RxStockDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxStockDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		01349BB01FB14DE2000FDD5E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +73,8 @@
 		014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModel.swift; sourceTree = "<group>"; };
 		014B63A41FB9BA7C00F19483 /* StockSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockSymbol.swift; sourceTree = "<group>"; };
 		014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPickerViewModelTests.swift; sourceTree = "<group>"; };
+		017BD2DF1FDA269D00AD61E6 /* SectorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorViewModel.swift; sourceTree = "<group>"; };
+		017BD2E11FDA3B8000AD61E6 /* SectorTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorTableViewCell.swift; sourceTree = "<group>"; };
 		0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModel.swift; sourceTree = "<group>"; };
 		0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockCollectionViewModelTests.swift; sourceTree = "<group>"; };
 		01A20E451FB2FD0900B5A349 /* SandPApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandPApi.swift; sourceTree = "<group>"; };
@@ -73,6 +82,7 @@
 		01A2A59B1FB4535C006399CA /* StocksApiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StocksApiTests.swift; sourceTree = "<group>"; };
 		01A2A5A21FB4B312006399CA /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		01A2A5A41FB4CE47006399CA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		01A89BE31FDA6C44000AADD7 /* SectorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectorViewModelTests.swift; sourceTree = "<group>"; };
 		01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewController.swift; sourceTree = "<group>"; };
 		01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		059A7F34A33C87AAF0C81E88 /* Pods-RxStockDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxStockDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RxStockDemo/Pods-RxStockDemo.debug.xcconfig"; sourceTree = "<group>"; };
@@ -169,6 +179,7 @@
 				0195E3C51FC2C31600357D21 /* StockCollectionViewModel.swift */,
 				014246CB1FBEB1340041FD63 /* SymbolPickerViewModel.swift */,
 				01D46B431FD40C9400BE4AB6 /* ChartViewModel.swift */,
+				017BD2DF1FDA269D00AD61E6 /* SectorViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -177,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				010EDF511FBC336B00516DBB /* StockPortfolio.swift */,
+				011FF23F1FD8D20E00926F95 /* SectorPerformance.swift */,
 				010EDF4F1FBBFC4000516DBB /* StockPrice.swift */,
 				0106CBD11FC542D5006883E3 /* StockSubscription.swift */,
 				014B63A41FB9BA7C00F19483 /* StockSymbol.swift */,
@@ -190,6 +202,7 @@
 				0195E3C71FC2D05F00357D21 /* StockCollectionViewModelTests.swift */,
 				014FBA331FC195640046B9FE /* SymbolPickerViewModelTests.swift */,
 				011671591FD4150E000732A9 /* ChartViewModelTests.swift */,
+				01A89BE31FDA6C44000AADD7 /* SectorViewModelTests.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -214,10 +227,12 @@
 		018E846A1FBCA5F3008C34CC /* View */ = {
 			isa = PBXGroup;
 			children = (
+				01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */,
+				017BD2E11FDA3B8000AD61E6 /* SectorTableViewCell.swift */,
+				011FF23D1FD8109400926F95 /* SectorViewController.swift */,
 				011CF6151FBD671700BDCAC5 /* StockCollectionViewCell.swift */,
 				01349BB21FB14DE2000FDD5E /* StockCollectionViewController.swift */,
 				014246C91FBEB0610041FD63 /* SymbolPickerViewController.swift */,
-				01D46B411FD3F5A000BE4AB6 /* ChartViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -409,7 +424,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RxStockDemo-RxStockDemoTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-RxStockDemoTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -422,11 +437,8 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
-				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/RAMAnimatedTabBarController/RAMAnimatedTabBarController.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework",
@@ -434,7 +446,6 @@
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftCharts/SwiftCharts.framework",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/OHHTTPStubs/OHHTTPStubs.framework",
 				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
@@ -443,9 +454,6 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RAMAnimatedTabBarController.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAlamofire.framework",
@@ -453,7 +461,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCharts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OHHTTPStubs.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
@@ -461,7 +468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CDF113F5155BD29071CC3092 /* [CP] Check Pods Manifest.lock */ = {
@@ -494,7 +501,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemo-RxStockDemoTests/Pods-RxStockDemo-RxStockDemoTests-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RxStockDemoTests/Pods-RxStockDemoTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FF9ACBA9BD25BD03C5C3C1D8 /* [CP] Embed Pods Frameworks */ = {
@@ -546,13 +553,17 @@
 			files = (
 				014246CA1FBEB0610041FD63 /* SymbolPickerViewController.swift in Sources */,
 				01A20E461FB2FD0900B5A349 /* SandPApi.swift in Sources */,
+				011FF2401FD8D20E00926F95 /* SectorPerformance.swift in Sources */,
 				01A2A5991FB4531A006399CA /* StocksApi.swift in Sources */,
 				0195E3C61FC2C31600357D21 /* StockCollectionViewModel.swift in Sources */,
 				010EDF501FBBFC4000516DBB /* StockPrice.swift in Sources */,
 				01349BB31FB14DE2000FDD5E /* StockCollectionViewController.swift in Sources */,
+				017BD2E21FDA3B8000AD61E6 /* SectorTableViewCell.swift in Sources */,
 				01349BB11FB14DE2000FDD5E /* AppDelegate.swift in Sources */,
 				011CF6161FBD671700BDCAC5 /* StockCollectionViewCell.swift in Sources */,
 				014B63A51FB9BA7C00F19483 /* StockSymbol.swift in Sources */,
+				011FF23E1FD8109400926F95 /* SectorViewController.swift in Sources */,
+				017BD2E01FDA269D00AD61E6 /* SectorViewModel.swift in Sources */,
 				01A2A5A51FB4CE47006399CA /* String+Extension.swift in Sources */,
 				01A2A5A31FB4B312006399CA /* ApiKeys.swift in Sources */,
 				0106CBD21FC542D5006883E3 /* StockSubscription.swift in Sources */,
@@ -571,6 +582,7 @@
 				0116715A1FD4150E000732A9 /* ChartViewModelTests.swift in Sources */,
 				0195E3C81FC2D05F00357D21 /* StockCollectionViewModelTests.swift in Sources */,
 				011F06691FB421B100F681B5 /* SandPApiTests.swift in Sources */,
+				01A89BE41FDA6C44000AADD7 /* SectorViewModelTests.swift in Sources */,
 				01A2A59C1FB4535C006399CA /* StocksApiTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -761,7 +773,7 @@
 		};
 		01349BCE1FB14DE2000FDD5E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 603AC1503579A338026F6E61 /* Pods-RxStockDemo-RxStockDemoTests.debug.xcconfig */;
+			baseConfigurationReference = 5635500F922A82ED8606BB22 /* Pods-RxStockDemoTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -782,7 +794,7 @@
 		};
 		01349BCF1FB14DE2000FDD5E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4070CBF9D6C417B0B31F9C62 /* Pods-RxStockDemo-RxStockDemoTests.release.xcconfig */;
+			baseConfigurationReference = B6A8232AF149A33C3DD0D744 /* Pods-RxStockDemoTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
